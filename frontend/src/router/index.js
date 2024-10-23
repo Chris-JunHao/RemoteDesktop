@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import VncViewer from '../components/VncViewer.vue';
+import VncViewer from '../components/VncViewer.vue'; // Ensure the path is correct
 
 const routes = [
   {
     path: '/',
     name: 'VncViewer',
-    component: VncViewer
-  }
-  // 你可以在此处添加其他路由
+    component: VncViewer,
+  },
+  // You can add more routes here if needed
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 });
 
 export default router;

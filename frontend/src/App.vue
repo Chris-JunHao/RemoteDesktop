@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <VncViewer />
+    <router-view /> <!-- Use router-view for dynamic routing -->
   </div>
 </template>
 
 <script>
-import VncViewer from './components/VncViewer.vue';
-
 export default {
   name: 'App',
-  components: {
-    VncViewer,
-  },
 };
 </script>
