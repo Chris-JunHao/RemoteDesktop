@@ -21,11 +21,11 @@ import java.nio.charset.StandardCharsets;
 public class WebSocketHandler extends TextWebSocketHandler {
 
     private Channel vncChannel;
+    private EventLoopGroup group;
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        // 连接到 VNC 服务器 (假设 VNC 服务器运行在 localhost:5900)
-        EventLoopGroup group = new NioEventLoopGroup();
+        group = new NioEventLoopGroup();
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(group)
                 .channel(NioSocketChannel.class)
@@ -36,29 +36,46 @@ public class WebSocketHandler extends TextWebSocketHandler {
                     }
                 });
 
-        vncChannel = bootstrap.connect("localhost", 5900).sync().channel();
+        try {
+            // Try to connect to the VNC server
+            vncChannel = bootstrap.connect("localhost", 5900).sync().channel();
 
-        // 从 VNC 接收数据并发送到 WebSocket
-        vncChannel.pipeline().addLast(new SimpleChannelInboundHandler<byte[]>() {
-            @Override
-            protected void channelRead0(ChannelHandlerContext ctx, byte[] msg) throws Exception {
-                session.sendMessage(new BinaryMessage(msg));
-            }
-        });
+            // Notify client that the connection was successful
+            session.sendMessage(new TextMessage("VNC connection established successfully."));
+
+            // From VNC receive data and send to WebSocket
+            vncChannel.pipeline().addLast(new SimpleChannelInboundHandler<byte[]>() {
+                @Override
+                protected void channelRead0(ChannelHandlerContext ctx, byte[] msg) throws Exception {
+                    session.sendMessage(new BinaryMessage(msg));
+                }
+            });
+        } catch (Exception e) {
+            // Notify client that the connection failed
+            session.sendMessage(new TextMessage("Failed to connect to VNC server: " + e.getMessage()));
+            group.shutdownGracefully();
+        }
     }
 
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        // 将 WebSocket 的数据转发到 VNC 服务器
-        byte[] data = message.getPayload().getBytes(StandardCharsets.UTF_8);
-        ByteBuf buf = Unpooled.wrappedBuffer(data);
-        vncChannel.writeAndFlush(buf);
+        // Forward WebSocket data to the VNC server
+        if (vncChannel != null && vncChannel.isActive()) {
+            byte[] data = message.getPayload().getBytes(StandardCharsets.UTF_8);
+            ByteBuf buf = Unpooled.wrappedBuffer(data);
+            vncChannel.writeAndFlush(buf);
+        } else {
+            session.sendMessage(new TextMessage("VNC connection is not active."));
+        }
     }
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
         if (vncChannel != null) {
             vncChannel.close();
+        }
+        if (group != null) {
+            group.shutdownGracefully();
         }
     }
 }
