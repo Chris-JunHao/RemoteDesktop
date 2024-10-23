@@ -1,3 +1,5 @@
+package com.example;
+
 import org.springframework.web.socket.*;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.springframework.stereotype.Component;
@@ -19,7 +21,7 @@ public class VncWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        // Connect to VNC server (localhost:5901)
+        // Connect to VNC server (localhost:5900)
         EventLoopGroup group = new NioEventLoopGroup();
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(group)
@@ -31,7 +33,7 @@ public class VncWebSocketHandler extends TextWebSocketHandler {
                     }
                 });
 
-        vncChannel = bootstrap.connect("localhost", 5901).sync().channel();
+        vncChannel = bootstrap.connect("localhost", 5900).sync().channel();
 
         // Receive data from VNC and send it to WebSocket
         vncChannel.pipeline().addLast(new SimpleChannelInboundHandler<byte[]>() {
