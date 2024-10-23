@@ -1,8 +1,11 @@
-package com.example;
+package com.example.backend;
 
-import org.springframework.web.socket.*;
-import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.web.socket.BinaryMessage;
+import org.springframework.web.socket.CloseStatus;
+import org.springframework.web.socket.TextMessage;
+import org.springframework.web.socket.WebSocketSession;
+import org.springframework.web.socket.handler.TextWebSocketHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -15,13 +18,13 @@ import io.netty.handler.codec.bytes.ByteArrayEncoder;
 import java.nio.charset.StandardCharsets;
 
 @Component
-public class VncWebSocketHandler extends TextWebSocketHandler {
+public class WebSocketHandler extends TextWebSocketHandler {
 
     private Channel vncChannel;
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        // Connect to VNC server (localhost:5900)
+        // 连接到 VNC 服务器 (假设 VNC 服务器运行在 localhost:5900)
         EventLoopGroup group = new NioEventLoopGroup();
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(group)
@@ -35,7 +38,7 @@ public class VncWebSocketHandler extends TextWebSocketHandler {
 
         vncChannel = bootstrap.connect("localhost", 5900).sync().channel();
 
-        // Receive data from VNC and send it to WebSocket
+        // 从 VNC 接收数据并发送到 WebSocket
         vncChannel.pipeline().addLast(new SimpleChannelInboundHandler<byte[]>() {
             @Override
             protected void channelRead0(ChannelHandlerContext ctx, byte[] msg) throws Exception {
@@ -46,7 +49,7 @@ public class VncWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        // Forward data from WebSocket to VNC server
+        // 将 WebSocket 的数据转发到 VNC 服务器
         byte[] data = message.getPayload().getBytes(StandardCharsets.UTF_8);
         ByteBuf buf = Unpooled.wrappedBuffer(data);
         vncChannel.writeAndFlush(buf);
