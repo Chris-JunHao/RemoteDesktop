@@ -17,6 +17,6 @@
 6. 开发工具: idea
 7. 构建工具: maven
 8. 容器镜像: ubuntu desktop
-9.  访问协议: VNC
-10. 开发环境: macos
-11. 虚拟机软件: VMware Fusion
+9. 访问协议: VNC
+10. 开发环境: macos + windows11
+11. 虚拟机软件: VMware Fusion + VMware workstation
