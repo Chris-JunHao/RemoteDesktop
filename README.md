@@ -19,4 +19,3 @@
 8. 容器镜像: ubuntu desktop
 9. 访问协议: VNC
 10. 开发环境: macos + windows11
-11. 虚拟机软件: VMware Fusion + VMware workstation
