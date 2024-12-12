@@ -74,3 +74,31 @@
      3. POST /api/networks/{networkId}/connect：将容器连接到指定网络。
      4. POST /api/networks/{networkId}/disconnect：断开容器与指定网络的连接。
      5. GET /api/containers/{id}/network：查询容器的网络接口信息。
+
+## 四、项目结构
+
+```tree
+docker-manager
+│
+├── src/main/java
+│   ├── com/example/docker
+│   │   ├── controller
+│   │   │   ├── ContainerController.java         # 容器管理 API
+│   │   │   ├── NetworkController.java           # 网络管理 API
+│   │   │   └── DockerController.java            # 全局 API 接口
+│   │   ├── service
+│   │   │   ├── ContainerService.java            # 容器管理逻辑
+│   │   │   ├── NetworkService.java              # 网络管理逻辑
+│   │   │   └── DockerService.java               # Docker 客户端服务
+│   │   ├── integration
+│   │   │   ├── DockerClient.java                # Docker 客户端接口
+│   │   ├── config
+│   │   │   ├── DockerConfig.java                # Docker 配置类
+│   │   │   └── WebConfig.java                  # Web 配置
+│   └── resources
+│       ├── application.yml                     # 配置文件
+│       └── logback.xml                         # 日志配置
+│
+├── pom.xml                                      # 项目依赖
+└── Dockerfile                                   # 用于构建 Spring Boot Docker 镜像
+```
