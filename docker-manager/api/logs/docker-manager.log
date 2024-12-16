@@ -19,3 +19,13 @@
 2024-12-16 10:21:53.984  INFO 50205 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2024-12-16 10:21:54.275  INFO 50205 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
 2024-12-16 10:21:54.283  INFO 50205 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 2.819 seconds (JVM running for 3.406)
+2024-12-16 10:27:46.901  INFO 52292 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on ChrisdeMacBook-Air.local with PID 52292 (/Users/tang/Documents/GitHub/RemoteDesktop/docker-manager/api/target/classes started by tang in /Users/tang/Documents/GitHub/RemoteDesktop/docker-manager/api)
+2024-12-16 10:27:46.903  INFO 52292 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-16 10:27:47.333  INFO 52292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-16 10:27:47.337  INFO 52292 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16 10:27:47.337  INFO 52292 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-16 10:27:47.364  INFO 52292 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16 10:27:47.364  INFO 52292 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 440 ms
+2024-12-16 10:27:47.969  INFO 52292 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-16 10:27:48.056  INFO 52292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-16 10:27:48.061  INFO 52292 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 1.429 seconds (JVM running for 1.74)
