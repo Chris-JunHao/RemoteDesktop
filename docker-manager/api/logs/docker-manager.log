@@ -1,0 +1,21 @@
+2024-12-16 10:13:08.728  INFO 49917 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on ChrisdeMacBook-Air.local with PID 49917 (/Users/tang/Desktop/reference/docker-manager/api/target/classes started by tang in /Users/tang/Desktop/reference/docker-manager/api)
+2024-12-16 10:13:08.731  INFO 49917 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-16 10:13:09.143  INFO 49917 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-16 10:13:09.147  INFO 49917 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16 10:13:09.148  INFO 49917 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-16 10:13:09.176  INFO 49917 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16 10:13:09.176  INFO 49917 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 424 ms
+2024-12-16 10:13:09.908  INFO 49917 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-16 10:13:10.007  INFO 49917 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-16 10:13:10.013  INFO 49917 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 1.565 seconds (JVM running for 1.899)
+2024-12-16 10:16:07.690  INFO 49917 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-16 10:21:51.817  INFO 50205 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on ChrisdeMacBook-Air.local with PID 50205 (/Users/tang/Desktop/reference/docker-manager/api/target/classes started by tang in /Users/tang/Desktop/reference/docker-manager/api)
+2024-12-16 10:21:51.819  INFO 50205 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-16 10:21:52.540  INFO 50205 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-16 10:21:52.551  INFO 50205 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16 10:21:52.552  INFO 50205 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-16 10:21:52.606  INFO 50205 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16 10:21:52.610  INFO 50205 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 762 ms
+2024-12-16 10:21:53.984  INFO 50205 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-16 10:21:54.275  INFO 50205 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-16 10:21:54.283  INFO 50205 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 2.819 seconds (JVM running for 3.406)
