@@ -29,3 +29,24 @@
 2024-12-16 10:27:47.969  INFO 52292 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2024-12-16 10:27:48.056  INFO 52292 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
 2024-12-16 10:27:48.061  INFO 52292 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 1.429 seconds (JVM running for 1.74)
+2024-12-16 10:36:30.008  INFO 53931 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on ChrisdeMacBook-Air.local with PID 53931 (/Users/tang/Documents/GitHub/RemoteDesktop/docker-manager/api/target/classes started by tang in /Users/tang/Documents/GitHub/RemoteDesktop/docker-manager/api)
+2024-12-16 10:36:30.010  INFO 53931 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-16 10:36:30.715  INFO 53931 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-16 10:36:30.719  INFO 53931 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16 10:36:30.719  INFO 53931 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-16 10:36:30.743  INFO 53931 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16 10:36:30.743  INFO 53931 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 705 ms
+2024-12-16 10:36:31.344  INFO 53931 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-16 10:36:31.434  INFO 53931 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-16 10:36:31.439  INFO 53931 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 1.716 seconds (JVM running for 2.048)
+2024-12-16 10:36:37.363  INFO 53931 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-16 10:48:15.485  INFO 54409 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on ChrisdeMacBook-Air.local with PID 54409 (/Users/tang/Documents/GitHub/RemoteDesktop/docker-manager/api/target/classes started by tang in /Users/tang/Documents/GitHub/RemoteDesktop/docker-manager/api)
+2024-12-16 10:48:15.486  INFO 54409 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-16 10:48:15.907  INFO 54409 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-16 10:48:15.911  INFO 54409 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16 10:48:15.911  INFO 54409 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-16 10:48:15.947  INFO 54409 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16 10:48:15.947  INFO 54409 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 433 ms
+2024-12-16 10:48:16.542  INFO 54409 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-16 10:48:16.634  INFO 54409 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-16 10:48:16.640  INFO 54409 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 1.359 seconds (JVM running for 1.77)
