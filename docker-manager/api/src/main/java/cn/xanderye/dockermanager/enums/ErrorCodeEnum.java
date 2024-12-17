@@ -2,11 +2,7 @@ package cn.xanderye.dockermanager.enums;
 
 import lombok.Getter;
 
-/**
- *
- * @author XanderYe
- * @date 2018-11-05
- */
+
 @Getter
 public enum ErrorCodeEnum {
     // 错误码

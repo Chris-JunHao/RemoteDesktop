@@ -8,11 +8,6 @@ import io.jsonwebtoken.security.Keys;
 
 import javax.crypto.SecretKey;
 
-/**
- * Created on 2020/11/26.
- *
- * @author XanderYe
- */
 public class JwtUtil {
 
     private static final SecretKey SECRET_KEY = Keys.hmacShaKeyFor(MD5Util.md5("XanderYe").getBytes());

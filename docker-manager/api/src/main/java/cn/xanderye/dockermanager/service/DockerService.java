@@ -1,10 +1,6 @@
 package cn.xanderye.dockermanager.service;
 
-/**
- * Created on 2020/11/25.
- *
- * @author XanderYe
- */
+
 public interface DockerService {
 
     /**

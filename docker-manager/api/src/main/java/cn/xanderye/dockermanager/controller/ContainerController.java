@@ -12,11 +12,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Created on 2020/11/25.
- *
- * @author XanderYe
- */
 @Slf4j
 @RestController
 @RequestMapping("container")

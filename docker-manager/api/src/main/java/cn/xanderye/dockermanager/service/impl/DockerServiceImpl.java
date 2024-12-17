@@ -5,11 +5,7 @@ import cn.xanderye.dockermanager.util.DockerUtil;
 import cn.xanderye.dockermanager.util.SystemUtil;
 import org.springframework.stereotype.Service;
 
-/**
- * Created on 2020/11/25.
- *
- * @author XanderYe
- */
+
 @Service
 public class DockerServiceImpl implements DockerService {
     @Override

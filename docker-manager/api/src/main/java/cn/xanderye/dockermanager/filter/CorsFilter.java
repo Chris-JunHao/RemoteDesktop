@@ -5,10 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author 叶振东
- * @date 2019-07-15
- */
 public class CorsFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {

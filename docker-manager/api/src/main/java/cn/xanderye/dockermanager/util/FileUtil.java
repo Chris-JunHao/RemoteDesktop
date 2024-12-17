@@ -7,11 +7,6 @@ import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.stream.Stream;
 
-/**
- * Created on 2020/9/1.
- *
- * @author XanderYe
- */
 public class FileUtil {
     /**
      * 复制单文件

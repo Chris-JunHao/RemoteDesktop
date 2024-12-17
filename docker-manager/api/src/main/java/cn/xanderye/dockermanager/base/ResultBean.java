@@ -7,11 +7,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
-/**
- *
- * @author XanderYe
- * @date 2019-01-10
- */
+
 @Data
 @Accessors(chain = true)
 public class ResultBean<T> implements Serializable {

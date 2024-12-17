@@ -3,11 +3,7 @@ package cn.xanderye.dockermanager.exception;
 import cn.xanderye.dockermanager.enums.ErrorCodeEnum;
 import org.slf4j.helpers.MessageFormatter;
 
-/**
- *
- * @author XanderYe
- * @date 2018-11-05
- */
+
 public class BusinessException extends RuntimeException {
     private int code;
     private String snapshot;

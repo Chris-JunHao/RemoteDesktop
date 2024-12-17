@@ -7,11 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
 
-/**
- * Created on 2020/11/24.
- *
- * @author XanderYe
- */
+
 public class DockerUtil {
 
     public static boolean systemd = true;

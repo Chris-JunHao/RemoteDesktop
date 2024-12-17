@@ -6,11 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-/**
- * Created on 2020/11/25.
- *
- * @author XanderYe
- */
+
 public interface ContainerService {
 
     /**

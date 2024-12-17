@@ -11,11 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * Created on 2020/11/25.
- *
- * @author XanderYe
- */
+
 @RestController
 @RequestMapping("docker")
 public class DockerController {

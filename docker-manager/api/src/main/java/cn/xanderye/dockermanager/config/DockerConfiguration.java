@@ -8,11 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
 
-/**
- * Created on 2020/11/24.
- *
- * @author XanderYe
- */
+
 @Configuration
 public class DockerConfiguration {
 

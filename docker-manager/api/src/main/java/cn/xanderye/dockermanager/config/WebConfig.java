@@ -12,11 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.Filter;
 
-/**
- * Created on 2020/11/26.
- *
- * @author XanderYe
- */
+
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
     @Autowired

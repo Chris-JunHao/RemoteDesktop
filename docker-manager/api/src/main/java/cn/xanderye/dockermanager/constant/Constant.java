@@ -3,11 +3,6 @@ package cn.xanderye.dockermanager.constant;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created on 2020/11/26.
- *
- * @author 叶振东
- */
 public class Constant {
 
     public final static String SYSTEMD_ERROR = "Failed to connect";

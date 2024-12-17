@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 
-/**
- * Created by Xander on 2018-11-05.
- */
+
 @Slf4j
 @Component
 public class LoginInterceptor extends HandlerInterceptorAdapter {
