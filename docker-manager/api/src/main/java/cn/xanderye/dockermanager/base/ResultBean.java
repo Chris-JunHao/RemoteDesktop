@@ -41,6 +41,7 @@ public class ResultBean<T> implements Serializable {
         return new ResultBean(errorCode.getCode(), errorCode.getMessage());
     }
 
+
     public static <T> ResultBean error(String msg) {
         return new ResultBean<>().setCode(1).setMsg(msg);
     }
