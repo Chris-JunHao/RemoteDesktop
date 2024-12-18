@@ -548,3 +548,52 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
+2024-12-18 12:24:13.260  INFO 23616 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 23616 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 12:24:13.262  INFO 23616 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 12:24:13.817  INFO 23616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-18 12:24:13.823  INFO 23616 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-18 12:24:13.823  INFO 23616 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-18 12:24:13.824  INFO 23616 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-18 12:24:13.824  INFO 23616 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-18 12:24:13.825  INFO 23616 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-18 12:24:13.853  INFO 23616 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-18 12:24:13.897  INFO 23616 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-18 12:24:13.897  INFO 23616 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 612 ms
+2024-12-18 12:24:15.749  INFO 23616 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-18 12:24:15.861  INFO 23616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-18 12:24:15.868  INFO 23616 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 2.85 seconds (JVM running for 3.9)
+2024-12-18 12:25:55.308  INFO 23616 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-18 12:26:41.889  INFO 20968 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 20968 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 12:26:41.891  INFO 20968 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 12:26:42.399  INFO 20968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-18 12:26:42.405  INFO 20968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-18 12:26:42.406  INFO 20968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-18 12:26:42.407  INFO 20968 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-18 12:26:42.407  INFO 20968 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-18 12:26:42.407  INFO 20968 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-18 12:26:42.410  INFO 20968 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-18 12:26:42.454  INFO 20968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-18 12:26:42.454  INFO 20968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 534 ms
+2024-12-18 12:26:43.666  INFO 20968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-18 12:26:43.776  INFO 20968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-18 12:26:43.782  INFO 20968 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 2.119 seconds (JVM running for 3.116)
+2024-12-18 12:26:48.849  INFO 20968 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-18 13:15:28.175  INFO 11236 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 11236 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 13:15:28.177  INFO 11236 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 13:15:28.698  INFO 11236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-18 13:15:28.708  INFO 11236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-18 13:15:28.708  INFO 11236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-18 13:15:28.709  INFO 11236 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-18 13:15:28.709  INFO 11236 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-18 13:15:28.709  INFO 11236 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-18 13:15:28.836  INFO 11236 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-18 13:15:28.892  INFO 11236 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-18 13:15:28.893  INFO 11236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 689 ms
+2024-12-18 13:15:31.028  INFO 11236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-18 13:15:31.140  INFO 11236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-18 13:15:31.147  INFO 11236 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 3.19 seconds (JVM running for 4.151)
+2024-12-18 13:15:38.433  INFO 11236 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-18 13:15:38.433  INFO 11236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-18 13:15:38.437  INFO 11236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-12-18 13:15:38.471 ERROR 11236 --- [http-nio-8081-exec-6] c.x.d.exception.GlobalExceptionHandler   : 用户名或密码错误
+2024-12-18 13:15:51.494  INFO 11236 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
