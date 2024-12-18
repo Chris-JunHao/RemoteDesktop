@@ -1,5 +1,5 @@
-2024-12-18 00:00:45.580  INFO 1568 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 1568 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:00:45.589  INFO 1568 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:00:45.580  INFO 1568 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 1568 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:00:45.589  INFO 1568 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:00:46.018  INFO 1568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:00:46.023  INFO 1568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:00:46.023  INFO 1568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -9,14 +9,14 @@
 2024-12-18 00:00:46.029  INFO 1568 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:00:46.069  INFO 1568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:00:46.070  INFO 1568 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 461 ms
-2024-12-18 00:00:46.104  WARN 1568 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:00:46.104  WARN 1568 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:00:46.107  INFO 1568 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:00:46.113  INFO 1568 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:00:46.120 ERROR 1568 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -36,9 +36,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -48,8 +48,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 00:00:54.067  INFO 16112 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 16112 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:00:54.069  INFO 16112 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:00:54.067  INFO 16112 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 16112 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:00:54.069  INFO 16112 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:00:54.530  INFO 16112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:00:54.535  INFO 16112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:00:54.535  INFO 16112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -59,14 +59,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 00:00:54.539  INFO 16112 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:00:54.578  INFO 16112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:00:54.578  INFO 16112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 489 ms
-2024-12-18 00:01:39.339  WARN 16112 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:01:39.339  WARN 16112 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:01:39.340  INFO 16112 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:01:39.347  INFO 16112 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:01:39.353 ERROR 16112 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -86,9 +86,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -98,8 +98,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 00:02:04.641  INFO 19924 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 19924 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:02:04.642  INFO 19924 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:02:04.641  INFO 19924 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 19924 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:02:04.642  INFO 19924 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:02:05.085  INFO 19924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:02:05.091  INFO 19924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:02:05.091  INFO 19924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -109,14 +109,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 00:02:05.095  INFO 19924 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:02:05.135  INFO 19924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:02:05.136  INFO 19924 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 475 ms
-2024-12-18 00:02:05.168  WARN 19924 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:02:05.168  WARN 19924 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:02:05.170  INFO 19924 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:02:05.176  INFO 19924 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:02:05.181 ERROR 19924 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -136,9 +136,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -148,8 +148,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 00:03:07.560  INFO 17368 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 17368 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:03:07.561  INFO 17368 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:03:07.560  INFO 17368 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 17368 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:03:07.561  INFO 17368 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:03:07.986  INFO 17368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:03:07.992  INFO 17368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:03:07.993  INFO 17368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -159,14 +159,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 00:03:07.996  INFO 17368 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:03:08.035  INFO 17368 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:03:08.035  INFO 17368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 454 ms
-2024-12-18 00:03:08.065  WARN 17368 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:03:08.065  WARN 17368 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:03:08.067  INFO 17368 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:03:08.072  INFO 17368 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:03:08.078 ERROR 17368 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -186,9 +186,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -198,8 +198,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 00:06:37.073  INFO 10232 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 10232 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:06:37.075  INFO 10232 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:06:37.073  INFO 10232 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 10232 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:06:37.075  INFO 10232 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:06:37.569  INFO 10232 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:06:37.574  INFO 10232 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:06:37.574  INFO 10232 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -209,14 +209,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 00:06:37.582  INFO 10232 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:06:37.633  INFO 10232 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:06:37.633  INFO 10232 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 539 ms
-2024-12-18 00:06:37.685  WARN 10232 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:06:37.685  WARN 10232 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:06:37.688  INFO 10232 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:06:37.697  INFO 10232 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:06:37.704 ERROR 10232 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -236,9 +236,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -248,8 +248,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 00:11:29.118  INFO 17112 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 17112 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:11:29.119  INFO 17112 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:11:29.118  INFO 17112 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 17112 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:11:29.119  INFO 17112 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:11:29.553  INFO 17112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:11:29.558  INFO 17112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:11:29.558  INFO 17112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -259,14 +259,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 00:11:29.562  INFO 17112 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:11:29.605  INFO 17112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:11:29.605  INFO 17112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 467 ms
-2024-12-18 00:11:29.635  WARN 17112 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:11:29.635  WARN 17112 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:11:29.637  INFO 17112 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:11:29.643  INFO 17112 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:11:29.648 ERROR 17112 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -286,9 +286,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -298,8 +298,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 00:15:18.976  INFO 26856 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 26856 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:15:18.978  INFO 26856 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:15:18.976  INFO 26856 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 26856 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:15:18.978  INFO 26856 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:15:19.442  INFO 26856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:15:19.447  INFO 26856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:15:19.447  INFO 26856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -309,14 +309,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 00:15:19.451  INFO 26856 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:15:19.496  INFO 26856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:15:19.496  INFO 26856 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 497 ms
-2024-12-18 00:15:19.526  WARN 26856 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:15:19.526  WARN 26856 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:15:19.527  INFO 26856 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:15:19.533  INFO 26856 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:15:19.538 ERROR 26856 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -336,9 +336,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -348,8 +348,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 00:15:33.001  INFO 20720 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 20720 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 00:15:33.002  INFO 20720 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 00:15:33.001  INFO 20720 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 20720 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 00:15:33.002  INFO 20720 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 00:15:33.490  INFO 20720 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 00:15:33.494  INFO 20720 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 00:15:33.495  INFO 20720 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -359,14 +359,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 00:15:33.499  INFO 20720 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 00:15:33.539  INFO 20720 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 00:15:33.539  INFO 20720 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 517 ms
-2024-12-18 00:15:58.181  WARN 20720 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 00:15:58.181  WARN 20720 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 00:15:58.184  INFO 20720 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 00:15:58.190  INFO 20720 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 00:15:58.196 ERROR 20720 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -386,9 +386,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -398,8 +398,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 01:00:12.721  INFO 3756 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 3756 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 01:00:12.723  INFO 3756 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 01:00:12.721  INFO 3756 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 3756 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 01:00:12.723  INFO 3756 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 01:00:13.250  INFO 3756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 01:00:13.257  INFO 3756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 01:00:13.257  INFO 3756 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -409,14 +409,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 01:00:13.479  INFO 3756 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 01:00:13.527  INFO 3756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 01:00:13.527  INFO 3756 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 784 ms
-2024-12-18 01:00:13.575  WARN 3756 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 01:00:13.575  WARN 3756 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 01:00:13.576  INFO 3756 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 01:00:13.583  INFO 3756 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 01:00:13.594 ERROR 3756 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -436,9 +436,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -448,8 +448,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 12:10:22.567  INFO 27788 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 27788 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 12:10:22.569  INFO 27788 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 12:10:22.567  INFO 27788 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 27788 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 12:10:22.569  INFO 27788 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 12:10:23.071  INFO 27788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 12:10:23.077  INFO 27788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 12:10:23.077  INFO 27788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -459,14 +459,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 12:10:23.098  INFO 27788 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 12:10:23.148  INFO 27788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 12:10:23.149  INFO 27788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 554 ms
-2024-12-18 12:10:23.181  WARN 27788 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 12:10:23.181  WARN 27788 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 12:10:23.182  INFO 27788 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 12:10:23.189  INFO 27788 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 12:10:23.194 ERROR 27788 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -486,9 +486,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -498,8 +498,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 12:11:46.225  INFO 19908 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 19908 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 12:11:46.226  INFO 19908 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 12:11:46.225  INFO 19908 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 19908 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 12:11:46.226  INFO 19908 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 12:11:46.701  INFO 19908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 12:11:46.708  INFO 19908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 12:11:46.709  INFO 19908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -509,14 +509,14 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 12:11:46.714  INFO 19908 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
 2024-12-18 12:11:46.754  INFO 19908 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
 2024-12-18 12:11:46.754  INFO 19908 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 505 ms
-2024-12-18 12:11:48.779  WARN 19908 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+2024-12-18 12:11:48.779  WARN 19908 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 2024-12-18 12:11:48.781  INFO 19908 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
 2024-12-18 12:11:48.787  INFO 19908 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2024-12-18 12:11:48.793 ERROR 19908 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dockerConfiguration': Invocation of init method failed; nested exception is exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
@@ -536,9 +536,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]
-	at cn.xanderye.dockermanager.Application.main(Application.java:10) ~[classes/:na]
-Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装docker
-	at cn.xanderye.dockermanager.config.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.Application.main(Application.java:10) ~[classes/:na]
+Caused by: exception.cn.zjut.cn.dockermanager.BusinessException: 请先安装docker
+	at config.cn.zjut.cn.dockermanager.DockerConfiguration.init(DockerConfiguration.java:23) ~[classes/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
@@ -548,8 +548,8 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]
 	... 19 common frames omitted
 
-2024-12-18 12:24:13.260  INFO 23616 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 23616 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 12:24:13.262  INFO 23616 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 12:24:13.260  INFO 23616 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 23616 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 12:24:13.262  INFO 23616 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 12:24:13.817  INFO 23616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 12:24:13.823  INFO 23616 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 12:24:13.823  INFO 23616 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -561,10 +561,10 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 12:24:13.897  INFO 23616 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 612 ms
 2024-12-18 12:24:15.749  INFO 23616 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2024-12-18 12:24:15.861  INFO 23616 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2024-12-18 12:24:15.868  INFO 23616 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 2.85 seconds (JVM running for 3.9)
+2024-12-18 12:24:15.868  INFO 23616 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.85 seconds (JVM running for 3.9)
 2024-12-18 12:25:55.308  INFO 23616 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2024-12-18 12:26:41.889  INFO 20968 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 20968 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 12:26:41.891  INFO 20968 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 12:26:41.889  INFO 20968 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 20968 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 12:26:41.891  INFO 20968 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 12:26:42.399  INFO 20968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 12:26:42.405  INFO 20968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 12:26:42.406  INFO 20968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -576,10 +576,10 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 12:26:42.454  INFO 20968 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 534 ms
 2024-12-18 12:26:43.666  INFO 20968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2024-12-18 12:26:43.776  INFO 20968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2024-12-18 12:26:43.782  INFO 20968 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 2.119 seconds (JVM running for 3.116)
+2024-12-18 12:26:43.782  INFO 20968 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.119 seconds (JVM running for 3.116)
 2024-12-18 12:26:48.849  INFO 20968 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2024-12-18 13:15:28.175  INFO 11236 --- [main] cn.xanderye.dockermanager.Application    : Starting Application on zpf with PID 11236 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
-2024-12-18 13:15:28.177  INFO 11236 --- [main] cn.xanderye.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 13:15:28.175  INFO 11236 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 11236 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 13:15:28.177  INFO 11236 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
 2024-12-18 13:15:28.698  INFO 11236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
 2024-12-18 13:15:28.708  INFO 11236 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
 2024-12-18 13:15:28.708  INFO 11236 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
@@ -591,9 +591,40 @@ Caused by: cn.xanderye.dockermanager.exception.BusinessException: 请先安装do
 2024-12-18 13:15:28.893  INFO 11236 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 689 ms
 2024-12-18 13:15:31.028  INFO 11236 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2024-12-18 13:15:31.140  INFO 11236 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-2024-12-18 13:15:31.147  INFO 11236 --- [main] cn.xanderye.dockermanager.Application    : Started Application in 3.19 seconds (JVM running for 4.151)
+2024-12-18 13:15:31.147  INFO 11236 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 3.19 seconds (JVM running for 4.151)
 2024-12-18 13:15:38.433  INFO 11236 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-12-18 13:15:38.433  INFO 11236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-12-18 13:15:38.437  INFO 11236 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 2024-12-18 13:15:38.471 ERROR 11236 --- [http-nio-8081-exec-6] c.x.d.exception.GlobalExceptionHandler   : 用户名或密码错误
 2024-12-18 13:15:51.494  INFO 11236 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-18 13:29:19.621  INFO 9224 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 9224 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-18 13:29:19.622  INFO 9224 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-18 13:29:20.139  INFO 9224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-18 13:29:20.153  INFO 9224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-18 13:29:20.153  INFO 9224 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-18 13:29:20.154  INFO 9224 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-18 13:29:20.154  INFO 9224 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-18 13:29:20.154  INFO 9224 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-18 13:29:20.380  INFO 9224 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-18 13:29:20.428  INFO 9224 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-18 13:29:20.428  INFO 9224 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 783 ms
+2024-12-18 13:29:21.231  INFO 9224 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-18 13:29:21.337  INFO 9224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-18 13:29:21.343  INFO 9224 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 1.938 seconds (JVM running for 2.856)
+2024-12-18 13:31:47.283  INFO 9224 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-18 13:31:47.284  INFO 9224 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-18 13:31:47.288  INFO 9224 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-18 13:31:47.324 ERROR 9224 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-18 13:31:48.012 ERROR 9224 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-18 13:31:51.173 ERROR 9224 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 用户名或密码错误
+2024-12-18 13:32:35.390 ERROR 9224 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 用户名或密码错误
+2024-12-18 13:32:42.396  INFO 9224 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=admin
+2024-12-18 13:32:43.053 ERROR 9224 --- [http-nio-8081-exec-8] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:32:46.043 ERROR 9224 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:32:49.048 ERROR 9224 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:32:52.042 ERROR 9224 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:32:55.053 ERROR 9224 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:32:58.055 ERROR 9224 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:33:01.048 ERROR 9224 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:33:04.050 ERROR 9224 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
+2024-12-18 13:33:07.055 ERROR 9224 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 路径配置错误，无法获取到容器
