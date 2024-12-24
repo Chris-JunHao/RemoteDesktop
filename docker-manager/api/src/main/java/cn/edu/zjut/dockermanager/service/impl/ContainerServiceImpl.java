@@ -145,21 +145,32 @@ public class ContainerServiceImpl implements ContainerService {
 
     @Override
     public List<Container> getContainerStatusList() {
+        // 获取 Docker 容器的文件列表
         File[] containers = DockerUtil.getContainerFiles();
+        // 创建一个容器列表，用于存储解析后的容器对象
         List<Container> containerList = new ArrayList<>();
+        // 检查容器文件列表是否为空，如果不为空则继续处理
         if (FileUtil.isNotEmpty(containers)) {
+            // 遍历每个容器文件
             for (File container : containers) {
+                // 判断该文件是否为目录（容器的配置目录通常是目录类型）
                 if (container.isDirectory()) {
+                    // 获取容器的 ID（容器文件夹的名称就是容器的 ID）
                     String id = container.getName();
+                    // 读取容器的配置信息和主机配置信息
                     JSONObject configV2 = DockerUtil.readConfigV2(id);
                     JSONObject hostConfig = DockerUtil.readHostConfig(id);
+                    // 解析容器的状态，并将状态信息封装到 Container 对象中
                     Container ctn = parseStatus(configV2, hostConfig);
+                    // 将解析得到的容器对象添加到容器列表中
                     containerList.add(ctn);
                 }
             }
         } else {
+            // 如果容器文件列表为空，抛出业务异常
             throw new BusinessException(ErrorCodeEnum.PATH_ERROR);
         }
+        // 返回容器列表
         return containerList;
     }
 

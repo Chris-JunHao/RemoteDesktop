@@ -22,8 +22,6 @@ public class DockerUtil {
      * 检查 Docker 配置是否正常
      * 通过执行 `docker info` 命令来检查 Docker 是否已安装并在运行。
      * @return boolean 如果 Docker 正常工作，返回 true；否则返回 false。
-     * @author XanderYe
-     * @date 2020/11/24
      */
     public static boolean checkDocker() {
         try {
@@ -46,8 +44,6 @@ public class DockerUtil {
      * 获取所有容器的文件
      * 从容器存储路径中列出所有的容器文件。
      * @return java.io.File[] 返回容器目录下的所有文件。
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static File[] getContainerFiles() {
         File containerFile = new File(containerPath);
@@ -59,8 +55,6 @@ public class DockerUtil {
      * 读取给定路径的配置文件，并将其内容解析为 JSON 对象。
      * @param path 配置文件路径
      * @return com.alibaba.fastjson.JSONObject 返回解析后的 JSON 对象
-     * @author XanderYe
-     * @date 2020/11/24
      */
     public static JSONObject readConfig(String path) {
         File file = new File(path);
@@ -80,8 +74,6 @@ public class DockerUtil {
      * @param jsonObject 要写入的 JSON 对象
      * @param path 配置文件路径
      * @return boolean 如果写入成功，返回 true；否则返回 false
-     * @author XanderYe
-     * @date 2020/11/24
      */
     public static boolean writeConfig(JSONObject jsonObject, String path) {
         File file = new File(path);
@@ -100,8 +92,6 @@ public class DockerUtil {
      * 通过容器 ID 获取对应的 `config.v2.json` 文件内容。
      * @param id 容器 ID
      * @return com.alibaba.fastjson.JSONObject 返回配置文件内容
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static JSONObject readConfigV2(String id) {
         String configV2Path = containerPath + File.separator + id + File.separator + CONFIG_V2_FILE;
@@ -113,8 +103,6 @@ public class DockerUtil {
      * 通过容器 ID 获取对应的 `hostconfig.json` 文件内容。
      * @param id 容器 ID
      * @return com.alibaba.fastjson.JSONObject 返回配置文件内容
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static JSONObject readHostConfig(String id) {
         String hostConfigPath = containerPath + File.separator + id + File.separator + HOST_CONFIG_FILE;
@@ -127,8 +115,6 @@ public class DockerUtil {
      * @param id 容器 ID
      * @param configV2 修改后的 config.v2.json 配置内容
      * @return boolean 如果写入成功，返回 true；否则返回 false
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static boolean writeConfigV2(String id, JSONObject configV2) {
         String configV2Path = containerPath + File.separator + id + File.separator + CONFIG_V2_FILE;

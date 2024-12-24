@@ -15,8 +15,6 @@ public class FileUtil {
      * @param sourcePath 源文件路径
      * @param targetPath 目标文件路径
      * @throws IOException 如果复制过程中出现 I/O 异常，抛出此异常
-     * @author XanderYe
-     * @date 2020/9/1
      */
     public static void copyFile(String sourcePath, String targetPath) throws IOException {
         try (FileInputStream fis = new FileInputStream(sourcePath);
