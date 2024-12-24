@@ -12,7 +12,7 @@ public class DockerUtil {
     public static boolean systemd = true;
 
     // 容器路径，默认为 Docker 默认容器路径
-    public static String containerPath = "/var/lib/docker/containers";
+    public static String containerPath = "\\\\wsl.localhost\\docker-desktop\\mnt\\docker-desktop-disk\\data\\docker\\containers";
 
     // 配置文件名
     private final static String CONFIG_V2_FILE = "config.v2.json";
@@ -30,9 +30,7 @@ public class DockerUtil {
             if (res.contains("command not found") || res.contains("Cannot connect to the Docker daemon")) {
                 return false; // Docker 未安装或未运行
             }
-            // 提取 Docker 根目录路径
-            String dockerRootDir = StringUtils.substringBetween(res, "Docker Root Dir:", "Debug").trim();
-            containerPath = dockerRootDir + File.separator + "containers";
+
             return true;
         } catch (Exception e) {
             e.printStackTrace();
