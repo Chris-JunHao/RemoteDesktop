@@ -6,11 +6,14 @@ import cn.edu.zjut.dockermanager.enums.ErrorCodeEnum;
 import cn.edu.zjut.dockermanager.service.ContainerService;
 import cn.edu.zjut.dockermanager.constant.Constant;
 import cn.edu.zjut.dockermanager.exception.BusinessException;
+import cn.edu.zjut.dockermanager.util.SystemUtil;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Objects;
 
 /**
  * 容器管理控制器
@@ -23,6 +26,19 @@ public class ContainerController {
 
     @Autowired  // 自动注入容器服务
     private ContainerService containerService;
+
+    @PostMapping("createContainer")
+    public ResultBean createContainer(@RequestBody JSONObject params){
+        String name=params.getString("name");
+        String hostport=params.getString("hostport");
+        String type=params.getString("type");
+        if(Objects.equals(type, "KylinOS")){
+            SystemUtil.execStr("docker run -d --name "+name+" -p "+hostport+":6080 -v kylin_volume:/data kylin-vnc");
+        }else if(Objects.equals(type, "Ubuntu")){
+            SystemUtil.execStr("docker run -d --name "+name+" -p "+hostport+":6080 -v ubuntu_volume:/data ubuntu-vnc");
+        }
+        return new ResultBean<>();  // 返回成功的结果
+    }
 
     /**
      * 获取容器noVNC端口

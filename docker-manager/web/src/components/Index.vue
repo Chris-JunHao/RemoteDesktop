@@ -1,7 +1,8 @@
 <template>
   <div>
     <div style="padding: 10px">
-      <Button :disabled="editDisabled" @click="openConfigModal" style="width: 120px">编辑</Button>
+      <Button type="primary" @click="openCreateModal" style="width: 120px">新建</Button>
+      <Button :disabled="editDisabled" @click="openConfigModal" style="width: 120px">容器配置信息</Button>
       <Dropdown trigger="click" @on-click="controlContainer">
         <Button type="primary" :disabled="selectDisabled" style="width: 120px">
           操作
@@ -16,6 +17,31 @@
     <Table highlight-row ref="containerTable" :columns="columns" :data="containerList" @on-current-change="selectContainer">
     </Table>
 
+    <!-- 新建容器 Modal -->
+    <Modal id="createModal" title="新建容器" v-model="createModal" :mask-closable="false" width="50%">
+      <div>
+        <div style="margin-bottom: 10px;">
+          <span>容器名称：</span>
+          <Input v-model="newContainer.name" placeholder="请输入容器名称" />
+        </div>
+        <div style="margin-bottom: 10px;">
+          <span>访问端口：</span>
+          <Input v-model="newContainer.port" placeholder="请输入远程访问端口" />
+        </div>
+        <div style="margin-bottom: 10px;">
+          <span>操作系统：</span>
+          <Select v-model="newContainer.os" placeholder="请选择操作系统" style="width: 100%;">
+            <Option value="KylinOS">KylinOS（银河麒麟）</Option>
+            <Option value="Ubuntu">Ubuntu</Option>
+          </Select>
+        </div>
+        <div v-if="errorMessage" style="color: red; margin-bottom: 10px;">{{ errorMessage }}</div>
+      </div>
+      <div slot="footer">
+        <Button type="text" @click="closeCreateModal">取消</Button>
+        <Button type="primary" @click="createContainer" :loading="createModalLoading">确认</Button>
+      </div>
+    </Modal>
     <Modal id="configModal" title="修改配置" v-model="configModal" :mask-closable="false" width="50%">
       <Tabs :value="defaultTab" v-if="container">
         <TabPane label="卷" name="mount">
@@ -87,6 +113,14 @@
     name: "Index",
     data() {
       return {
+        createModal: false,
+        createModalLoading: false,
+        newContainer: {
+          name: '',
+          port: '',
+          os: ''
+        },
+        errorMessage: '',
         defaultTab: "mount",
         configModal: false,
         configModalLoading: false,
@@ -193,6 +227,75 @@
       }
     },
     methods: {
+      openCreateModal() {
+        this.createModal = true;
+        this.newContainer = { name: '', port: '', os: '' }; // 清空表单
+        this.errorMessage = ''; // 清空错误信息
+      },
+      closeCreateModal() {
+        this.createModal = false;
+      },
+      createContainer() {
+        // 验证容器名称是否为空
+        if (!this.newContainer.name) {
+          this.errorMessage = '请填写容器名称！';
+          return;
+        }
+
+        // 验证端口是否为空
+        if (!this.newContainer.port) {
+          this.errorMessage = '请填写端口！';
+          return;
+        }
+
+        // 验证操作系统类型是否选择
+        if (!this.newContainer.os) {
+          this.errorMessage = '请选择操作系统！';
+          return;
+        }
+
+        // 验证容器名称是否符合规范（长度和字符要求）
+        if (!/^[a-z0-9-]+$/.test(this.newContainer.name)) {
+          this.errorMessage = '容器名称只能包含小写字母、数字和连字符！';
+          return;
+        }
+
+        // 验证端口是否为数字
+        if (isNaN(this.newContainer.port)) {
+          this.errorMessage = '端口必须是数字！';
+          return;
+        }
+
+        // 验证端口范围（例如，1-65535）
+        if (this.newContainer.port < 1 || this.newContainer.port > 65535) {
+          this.errorMessage = '端口号必须在 1 到 65535 之间！';
+          return;
+        }
+
+        this.createModalLoading = true;
+
+        // 调用后端接口
+        this.$requests.post("/container/createContainer", {
+          name: this.newContainer.name,
+          hostport: this.newContainer.port,
+          type: this.newContainer.os
+        }).then(res => {
+          if (res.data.code === 0) {
+            this.$Message.success('容器创建成功！');
+            this.createModal = false;
+
+            // 触发父组件更新容器列表的事件
+            this.$emit('container-created', this.newContainer);
+          } else {
+            this.errorMessage = res.data.message || '容器创建失败，请重试！';
+          }
+        }).catch(error => {
+          this.errorMessage = '接口调用失败，请检查网络或联系管理员！';
+          console.error('创建容器失败：', error);
+        }).finally(() => {
+          this.createModalLoading = false;
+        });
+      },
       // 用于获取容器对应的 VNC 端口
       getVncPort(row) {
         // 通过容器 ID 来获取 VNC 端口
