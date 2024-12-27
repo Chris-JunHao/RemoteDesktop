@@ -309,4 +309,17 @@ public class ContainerServiceImpl implements ContainerService {
     public String restartContainer(String id) {
         return SystemUtil.execStr("docker restart " + id);
     }
+
+    public String getVncPort(String id) {
+        // 通过容器 ID 获取容器对象
+        Container container = getContainer(id);
+        List<Container.PortBinding> portBindings = container.getPortBindingList();
+        // 遍历端口映射列表，寻找符合条件的映射
+        for (Container.PortBinding binding : portBindings) {
+            if ("tcp".equalsIgnoreCase(binding.getType()) && "6080".equals(binding.getPort())) {
+                return binding.getHostPort();
+            }
+        }
+        return null;
+    }
 }

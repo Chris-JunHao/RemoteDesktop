@@ -17,8 +17,6 @@ public class JwtUtil {
      * 使用 HMAC-SHA 加密算法对用户名进行签名，并使用 GZIP 压缩编码。
      * @param username 用户名
      * @return 编码后的 JWT 字符串
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static String encode(String username){
         return Jwts.builder()
@@ -34,8 +32,6 @@ public class JwtUtil {
      * @param jwt JWT 字符串
      * @return 解码后的用户名
      * @throws ExpiredJwtException 如果 JWT 已过期，抛出此异常
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static String decode(String jwt) throws ExpiredJwtException{
         return Jwts.parser() // 创建 JWT 解析器

@@ -25,6 +25,30 @@ public class ContainerController {
     private ContainerService containerService;
 
     /**
+     * 获取容器noVNC端口
+     * @return
+     */
+    @GetMapping("getVncPort")
+    public ResultBean getVncPort(String id){
+        // 参数为空时抛出异常
+        if (StringUtils.isEmpty(id)) {
+            throw new BusinessException(ErrorCodeEnum.PARAMETER_EMPTY);  // 抛出空参数异常
+        }
+        // 获取容器信息
+        Container container = containerService.getContainer(id);
+        // 容器不存在时抛出异常
+        if (null == container) {
+            throw new BusinessException("容器id" + id + "不存在");  // 抛出容器不存在异常
+        }
+        String vncPort=containerService.getVncPort(id);
+        // 6080内部端口不存在时抛出异常
+        if (null == vncPort) {
+            throw new BusinessException("noVNC端口不存在");  // 抛出端口不存在异常
+        }
+        return new ResultBean<>(vncPort);
+    }
+
+    /**
      * 获取容器状态列表
      * @return ResultBean 返回容器状态列表的ResultBean对象
      */

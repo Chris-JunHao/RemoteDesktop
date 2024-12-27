@@ -95,8 +95,6 @@ public class SystemUtil {
      * 判断系统环境
      * @param
      * @return boolean
-     * @author XanderYe
-     * @date 2020/11/5
      */
     public static boolean isWindows() {
         return System.getProperty("os.name").toLowerCase().contains("windows");
@@ -106,8 +104,6 @@ public class SystemUtil {
      * 获取系统字符编码
      * @param
      * @return java.nio.charset.Charset
-     * @author XanderYe
-     * @date 2020/11/5
      */
     public static Charset getCharset() {
         return isWindows() ? Charset.forName("GBK") : Charset.defaultCharset();
@@ -117,8 +113,6 @@ public class SystemUtil {
      * 获取系统换行符
      * @param
      * @return java.lang.String
-     * @author XanderYe
-     * @date 2020/11/5
      */
     public static String getLineBreak() {
         return isWindows() ? WINDOWS_LINE_BREAK : UNIX_LINE_BREAK;

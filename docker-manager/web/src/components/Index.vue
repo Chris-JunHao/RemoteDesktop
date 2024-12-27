@@ -162,11 +162,56 @@
                 })
               ])
             }
+          },
+          {
+            title: "远程连接",
+            key: "remote-connect",
+            render: (h, params) => {
+              const row = params.row;
+              const state = row.state;
+
+              return h("div", [
+                h("Button", {
+                  props: {
+                    type: "primary",
+                    disabled: state !== "运行中"
+                  },
+                  on: {
+                    click: async () => {
+                      const vncPort = await this.getVncPort(row); // 动态获取 VNC 映射端口
+                      if (vncPort) {
+                        const vncUrl = `http://localhost:${vncPort}/vnc.html`;
+                        window.open(vncUrl, "_blank"); // 打开 noVNC 客户端页面
+                      }
+                    }
+                  }
+                }, "确定")
+              ]);
+            }
           }
         ]
       }
     },
     methods: {
+      // 用于获取容器对应的 VNC 端口
+      getVncPort(row) {
+        // 通过容器 ID 来获取 VNC 端口
+        // 可以替换为实际的接口调用逻辑
+        return this.$requests
+          .get("/container/getVncPort", { id: row.id })
+          .then(res => {
+            if (res.data.code === 0) {
+              return res.data.data; // 接口返回的是包含端口号的对象
+            } else {
+              this.$Message.error("获取 VNC 端口失败");
+              return null;
+            }
+          })
+          .catch(() => {
+            this.$Message.error("请求失败，请检查网络");
+            return null;
+          });
+      },
       getContainerStatusList() {
         this.$requests.get("/container/getContainerStatusList", {}).then(res => {
           if (res.data.code === 0) {

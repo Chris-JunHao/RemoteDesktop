@@ -11,8 +11,6 @@ public class MD5Util {
      * 使用 MD5 算法对输入的字符串进行加密
      * @param str 需要加密的字符串
      * @return 返回加密后的 16 进制 MD5 字符串
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static String md5(String str) {
         byte[] digest = null;

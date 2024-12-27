@@ -17,8 +17,6 @@ public interface ContainerService {
      * @param configV2 容器的配置
      * @param hostConfig 容器的主机配置
      * @return 返回解析后的容器状态对象
-     * @author XanderYe
-     * @date 2020/11/25
      */
     Container parseStatus(JSONObject configV2, JSONObject hostConfig);
 
@@ -28,8 +26,6 @@ public interface ContainerService {
      * @param configV2 容器的配置
      * @param hostConfig 容器的主机配置
      * @return 返回解析后的容器配置对象
-     * @author XanderYe
-     * @date 2020/11/25
      */
     Container parseConfig(JSONObject configV2, JSONObject hostConfig);
 
@@ -38,8 +34,6 @@ public interface ContainerService {
      * 根据容器的唯一标识符（id）获取对应的容器对象。
      * @param id 容器的唯一标识符
      * @return 返回容器对象
-     * @author XanderYe
-     * @date 2020/11/25
      */
     Container getContainer(String id);
 
@@ -47,8 +41,6 @@ public interface ContainerService {
      * 获取所有容器的状态列表
      * 获取系统中所有容器的当前状态列表。
      * @return 返回所有容器的状态列表
-     * @author XanderYe
-     * @date 2020/11/25
      */
     List<Container> getContainerStatusList();
 
@@ -56,8 +48,6 @@ public interface ContainerService {
      * 获取所有容器的详细配置列表
      * 获取系统中所有容器的详细配置列表。
      * @return 返回所有容器的配置列表
-     * @author XanderYe
-     * @date 2020/11/25
      */
     List<Container> getContainerConfigList();
 
@@ -66,8 +56,6 @@ public interface ContainerService {
      * 保存单个容器的配置。
      * @param container 容器对象，包含了容器的详细配置
      * @return void
-     * @author XanderYe
-     * @date 2020/11/25
      */
     void saveContainer(Container container);
 
@@ -76,8 +64,6 @@ public interface ContainerService {
      * 批量保存多个容器的配置。
      * @param containerList 容器对象列表，包含了多个容器的详细配置
      * @return void
-     * @author XanderYe
-     * @date 2020/11/25
      */
     void saveContainerList(List<Container> containerList);
 
@@ -86,8 +72,6 @@ public interface ContainerService {
      * 根据容器的唯一标识符（id）启动指定容器。
      * @param id 容器的唯一标识符
      * @return 返回容器启动的结果消息
-     * @author XanderYe
-     * @date 2020/11/25
      */
     String startContainer(String id);
 
@@ -96,8 +80,6 @@ public interface ContainerService {
      * 根据容器的唯一标识符（id）停止指定容器。
      * @param id 容器的唯一标识符
      * @return 返回容器停止的结果消息
-     * @author XanderYe
-     * @date 2020/11/25
      */
     String stopContainer(String id);
 
@@ -106,8 +88,14 @@ public interface ContainerService {
      * 根据容器的唯一标识符（id）重启指定容器。
      * @param id 容器的唯一标识符
      * @return 返回容器重启的结果消息
-     * @author XanderYe
-     * @date 2020/11/25
      */
     String restartContainer(String id);
+
+    /**
+     * 获取容器端口类型为 tcp 且容器端口号为 6080 对应的主机端口号
+     *
+     * @param id 容器 ID
+     * @return 对应的主机端口号，如果未找到则返回 null
+     */
+    String getVncPort(String id);
 }

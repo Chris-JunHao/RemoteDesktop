@@ -130,8 +130,6 @@ public class DockerUtil {
      * @param id 容器 ID
      * @param hostConfig 修改后的 hostconfig.json 配置内容
      * @return boolean 如果写入成功，返回 true；否则返回 false
-     * @author XanderYe
-     * @date 2020/11/25
      */
     public static boolean writeHostConfig(String id, JSONObject hostConfig) {
         String hostConfigPath = containerPath + File.separator + id + File.separator + HOST_CONFIG_FILE;
