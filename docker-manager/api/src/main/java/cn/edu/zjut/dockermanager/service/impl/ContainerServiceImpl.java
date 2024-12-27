@@ -197,32 +197,32 @@ public class ContainerServiceImpl implements ContainerService {
     @Override
     public void saveContainer(Container container) {
         String id = container.getId();
-
+        // 读取当前容器的配置文件 config.v2.json 和 hostconfig.json
         JSONObject configV2 = DockerUtil.readConfigV2(id);
         JSONObject hostConfig = DockerUtil.readHostConfig(id);
-
+        // 获取配置中的 "Config" 节点
         JSONObject config = configV2.getJSONObject("Config");
-
         // 设置环境变量
         List<Container.Env> envList = container.getEnvList();
         JSONArray envArray = new JSONArray();
         if (null != envList && !envList.isEmpty()) {
             for (Container.Env env : envList) {
+                // 将每个环境变量以 "key=value" 的形式加入到数组中
                 envArray.add(env.getKey() + "=" + env.getValue());
             }
         }
+        // 更新 Config 中的 "Env" 节点
         config.put("Env", envArray);
-
-        // 设置映射路径
+        // 设置挂载路径
         List<Container.MountPoint> mountPointList = container.getMountPointList();
-        JSONObject configMountPoints = new JSONObject(true);
-        JSONArray hostConfigBinds = new JSONArray();
+        JSONObject configMountPoints = new JSONObject(true); // 挂载点配置（用于 config.v2.json）
+        JSONArray hostConfigBinds = new JSONArray(); // 挂载绑定信息（用于 hostconfig.json）
         if (null != mountPointList && !mountPointList.isEmpty()) {
             for (Container.MountPoint mountPoint : mountPointList) {
-                // 设置config.v2.json
+                // 配置挂载点信息到 config.v2.json
                 JSONObject conf = new JSONObject(true);
-                conf.put("Source", mountPoint.getSource());
-                conf.put("Destination", mountPoint.getTarget());
+                conf.put("Source", mountPoint.getSource()); // 主机路径
+                conf.put("Destination", mountPoint.getTarget()); // 容器路径
                 conf.put("Name", "");
                 conf.put("Driver", "");
                 conf.put("Type", "bind");
@@ -232,61 +232,77 @@ public class ContainerServiceImpl implements ContainerService {
                 spec.put("Source", mountPoint.getSource());
                 spec.put("Target", mountPoint.getTarget());
                 if (mountPoint.getReadOnly()) {
+                    // 配置只读属性
                     conf.put("RW", false);
                     conf.put("Relabel", "ro");
                     spec.put("ReadOnly", true);
                 } else {
+                    // 配置可读写属性
                     conf.put("RW", true);
                     conf.put("Relabel", "rw");
                 }
                 conf.put("Spec", spec);
                 conf.put("SkipMountpointCreation", false);
                 configMountPoints.put(mountPoint.getTarget(), conf);
-                //设置hostconfig.json
+
+                // 配置挂载点信息到 hostconfig.json
                 hostConfigBinds.add(mountPoint.getSource() + ":" + mountPoint.getTarget());
             }
         }
+        // 更新 config.v2.json 的挂载点信息
         configV2.put("MountPoints", configMountPoints);
+        // 更新 hostconfig.json 的绑定挂载点信息
         hostConfig.put("Binds", hostConfigBinds);
 
-        // 设置映射端口
+        // 设置端口映射
         List<Container.PortBinding> portBindingList = container.getPortBindingList();
-        JSONObject portBindings = new JSONObject(true);
-        JSONObject exposedPorts = new JSONObject(true);
+        JSONObject portBindings = new JSONObject(true); // 端口绑定信息（用于 hostconfig.json）
+        JSONObject exposedPorts = new JSONObject(true); // 暴露的端口信息（用于 config.v2.json）
         if (null != portBindingList && !portBindingList.isEmpty()) {
             for (Container.PortBinding portBinding : portBindingList) {
+                // 配置暴露端口到 config.v2.json
                 String name = portBinding.getPort() + "/" + portBinding.getType();
                 exposedPorts.put(name, new JSONObject());
+
+                // 配置端口绑定到 hostconfig.json
                 JSONObject host = new JSONObject(true);
-                host.put("HostIp", "");
-                host.put("HostPort", portBinding.getHostPort());
+                host.put("HostIp", ""); // 主机 IP 地址，留空表示绑定到所有 IP
+                host.put("HostPort", portBinding.getHostPort()); // 主机端口
                 JSONArray hostArray = new JSONArray();
                 hostArray.add(host);
                 portBindings.put(name, hostArray);
             }
         }
+        // 更新 config.v2.json 的暴露端口信息
         config.put("ExposedPorts", exposedPorts);
+        // 更新 hostconfig.json 的端口绑定信息
         hostConfig.put("PortBindings", portBindings);
 
-        // 设置容器是否自动重启
+        // 设置容器自动重启策略
         JSONObject restartPolicy = hostConfig.getJSONObject("RestartPolicy");
         restartPolicy.put("Name", container.getRestartPolicy());
         hostConfig.put("RestartPolicy", restartPolicy);
 
+        // 更新 config.v2.json 的 Config 节点
         configV2.put("Config", config);
 
+        // 判断是否需要先停止容器再修改配置
         boolean needStop = null == container.getState() || "Running".equals(container.getState());
         if (needStop) {
             // 修改配置前停止容器
             stopContainer(container.getId());
         }
+
+        // 写入修改后的配置到对应文件
         DockerUtil.writeConfigV2(id, configV2);
         DockerUtil.writeHostConfig(id, hostConfig);
+
         if (needStop) {
-            // 重启启动停止容器
+            // 重启已停止的容器
             startContainer(container.getId());
         }
     }
+
 
     @Override
     public void saveContainerList(List<Container> containerList) {

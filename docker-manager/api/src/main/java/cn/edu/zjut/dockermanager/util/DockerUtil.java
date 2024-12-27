@@ -9,7 +9,7 @@ import java.io.*;
 public class DockerUtil {
 
     // 标记是否使用 systemd
-    public static boolean systemd = true;
+    public static boolean systemd = false;
 
     // 容器路径，默认为 Docker 默认容器路径
     public static String containerPath = "\\\\wsl.localhost\\docker-desktop\\mnt\\docker-desktop-disk\\data\\docker\\containers";
