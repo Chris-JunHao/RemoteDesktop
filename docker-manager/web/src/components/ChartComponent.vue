@@ -35,12 +35,29 @@ export default {
     window.addEventListener('resize', this.resizeChart);
   },
   methods: {
+    // 将时间字符串 "hh:mm" 转换为总分钟数
+    timeToMinutes(time) {
+      const [hours, minutes] = time.split(':').map(num => parseInt(num, 10));
+      return hours * 60 + minutes;
+    },
+
     updateChart() {
       if (!this.chartInstance || !this.data) return;
 
-      // 获取数据并按时间排序
-      const xData = Object.keys(this.data).sort((a, b) => new Date(a) - new Date(b)); // 按时间排序
-      const yData = xData.map(time => parseFloat(this.data[time])); // 根据排序后的时间获取对应的占用率
+      // 将数据转换为数组并按时间排序
+      const entries = Object.entries(this.data); // 获取数据的键值对
+      const sortedEntries = entries.sort((a, b) => this.timeToMinutes(a[0]) - this.timeToMinutes(b[0])); // 按分钟数排序
+
+      // 分别提取排序后的时间和数据
+      const xData = sortedEntries.map(entry => entry[0]); // 获取排序后的时间
+      const yData = sortedEntries.map(entry => parseFloat(entry[1])); // 获取对应的占用率
+
+      // 确保 X 轴有约 10 个标签
+      const totalDataLength = xData.length;
+      const interval = Math.max(1, Math.floor(totalDataLength / 10)); // 设置每隔多少个数据点显示一个标签
+
+      // 选择显示 10 个 X 轴标签
+      const reducedXData = xData.filter((_, index) => index % interval === 0);
 
       const option = {
         title: {
@@ -56,12 +73,18 @@ export default {
         },
         xAxis: {
           type: 'category',
-          boundaryGap: false,
-          data: xData,
+          boundaryGap: true, // X轴标签位置
+          data: xData, // 使用所有的 X 轴数据
           axisLabel: {
-            rotate: 45, // 旋转X轴标签，避免重叠
-            interval: 0, // 确保每个标签都显示
-            formatter: value => value // 格式化时间轴显示
+            rotate: 45,
+            interval: 0, // 强制显示筛选后的所有标签
+            formatter: (value, index) => {
+              // 只对 interval 选择的标签显示
+              return reducedXData.includes(value) ? value : '';
+            }
+          },
+          axisTick: {
+            show: false // 隐藏 X 轴上的刻度线
           }
         },
         yAxis: {
@@ -69,15 +92,15 @@ export default {
           min: 0,
           max: 100,
           axisLabel: {
-            formatter: '{value}%' // 格式化为百分比
+            formatter: '{value}%'
           }
         },
         series: [
           {
             name: '使用率',
             type: 'line',
-            data: yData,
-            smooth: true,
+            data: yData, // 使用所有的数据
+            smooth: true, // 保持平滑的线条
             areaStyle: {},
             lineStyle: {
               width: 2
@@ -86,7 +109,13 @@ export default {
               color: '#5470C6'
             }
           }
-        ]
+        ],
+        grid: {
+          top: '20%',
+          left: '10%',
+          right: '10%',
+          bottom: '20%' // 适当增加底部的空白
+        }
       };
 
       this.chartInstance.setOption(option);
@@ -113,5 +142,13 @@ export default {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  width: 100%; /* 确保容器宽度为100% */
+  height: 500px; /* 高度可以根据需要调整 */
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 400px; /* 在小屏幕下适当减小高度 */
+  }
 }
 </style>

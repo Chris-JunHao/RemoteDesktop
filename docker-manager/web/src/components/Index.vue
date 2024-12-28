@@ -43,7 +43,7 @@
       </div>
     </Modal>
     <!-- 资源利用窗口 -->
-    <Modal v-model="isResourceModalVisible" title="资源利用可视化" width="800px">
+    <Modal v-model="isResourceModalVisible" title="资源利用可视化" width="50%">
       <div style="display: flex; flex-direction: column;">
         <!-- CPU 使用率图表 -->
         <div>
@@ -314,6 +314,9 @@
 
         this.fetchCpuUsage(row.name);
         this.fetchMemoryUsage(row.name);
+      },mounted() {
+        // 在组件挂载后请求 CPU 和内存使用率数据
+        this.fetchUsageData(this.row);
       },
       openCreateModal() {
         this.createModal = true;
