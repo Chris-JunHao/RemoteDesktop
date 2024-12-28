@@ -2,9 +2,12 @@ package cn.edu.zjut.dockermanager.controller;
 
 import cn.edu.zjut.dockermanager.base.ResultBean;
 import cn.edu.zjut.dockermanager.enums.ErrorCodeEnum;
+import cn.edu.zjut.dockermanager.service.ContainerService;
+import cn.edu.zjut.dockermanager.service.LoginService;
 import cn.edu.zjut.dockermanager.util.JwtUtil;
 import cn.edu.zjut.dockermanager.exception.BusinessException;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping  // 设置登录请求的统一前缀
 public class LoginController {
 
-    @Value("${user.username}")  // 从配置文件中读取用户名
-    private String sysUsername;
-
-    @Value("${user.password}")  // 从配置文件中读取密码
-    private String sysPassword;
+    @Autowired  // 自动注入容器服务
+    private LoginService loginService;
 
     /**
      * 用户登录接口
@@ -38,7 +38,7 @@ public class LoginController {
         }
 
         // 验证用户名和密码是否匹配
-        if (!sysUsername.equals(username) || !sysPassword.equals(password)) {
+        if (!loginService.match(username,password)) {
             throw new BusinessException(ErrorCodeEnum.LOGIN_ERROR);  // 如果用户名或密码不匹配，抛出登录错误异常
         }
 

@@ -1,4 +1,4 @@
-<template>
+<template >
   <div>
     <div style="padding: 10px">
       <Button type="primary" @click="openCreateModal" style="width: 120px">新建</Button>
@@ -13,10 +13,35 @@
         </DropdownMenu>
       </Dropdown>
       <Button type="text" @click="logout" style="float: right;">注销</Button>
+      <Button @click="openLogsModal">查看操作日志</Button>
     </div>
     <Table highlight-row ref="containerTable" :columns="columns" :data="containerList" @on-current-change="selectContainer">
     </Table>
 
+    <!-- 日志弹窗 -->
+    <Modal v-model="logsModalVisible" title="操作日志" width="70%">
+        <div v-if="logList.length > 0">
+          <!-- 日志列表 -->
+          <el-table :data="logList" style="width: 100%">
+            <el-table-column label="操作人员" prop="accountName"></el-table-column>
+            <el-table-column label="操作" prop="action"></el-table-column>
+            <el-table-column label="时间" prop="logTime">
+            </el-table-column>
+          </el-table>
+          <!-- 分页组件 -->
+          <el-pagination
+            :current-page="currentPage"
+            :page-size="10"
+            :total="totalLogs"
+            layout="prev, pager, next, jumper"
+            @current-change="handlePageChange"
+            style="width: 100%; margin-top: 10px"
+          ></el-pagination>
+        </div>
+        <div v-else>
+          <p>没有日志数据。</p>
+        </div>
+    </Modal>
     <!-- 新建容器 Modal -->
     <Modal id="createModal" title="新建容器" v-model="createModal" :mask-closable="false" width="50%">
       <div>
@@ -122,8 +147,44 @@
   </div>
 </template>
 
+<style>
+.el-pagination {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px 0;
+  background-color: #f9f9f9;
+}
+
+// page-sizes选择器
+::v-deep .el-select-dropdown__item li{
+  background-color:transparent !important;
+}
+// prev和next箭头的样式
+::v-deep .el-pagination .btn-next,
+::v-deep .el-pagination .btn-prev{
+  background:transparent !important;
+  background-color:transparent !important;
+}
+// prev和next箭头disabled的样式
+::v-deep .el-pagination button:disabled {
+  background-color:transparent !important;
+}
+// 页码样式
+::v-deep .el-pager li{
+  background-color:transparent !important;
+}
+// active的页码样式
+::v-deep .el-pager li.active{
+  color: #267aff !important;
+}
+
+</style>
+
 <script>
-  import router from "../router";
   import ChartComponent from "./ChartComponent.vue";  // 引入 ChartComponent 组件
 
   export default {
@@ -131,6 +192,14 @@
     components: {ChartComponent},
     data() {
       return {
+        logList: [
+          { label: '账户', prop: 'accountName' },
+          { label: '操作', prop: 'action' },
+          { label: '时间', prop: 'logTime' }
+        ], // 存储日志数据
+        totalLogs: 0, // 总日志数
+        logsModalVisible: false, // 控制日志弹窗显示
+        currentPage: 1, // 当前页，添加这个属性
         isResourceModalVisible: false, // 控制 Modal 显示与隐藏
         cpuData: {},  // 存储 CPU 使用率数据
         memoryData: {}, // 存储内存使用率数据
@@ -270,6 +339,47 @@
       }
     },
     methods: {
+      // 打开日志弹窗
+      openLogsModal() {
+        this.logsModalVisible = true;
+        this.fetchLogs(0, 10); // 获取日志数据，默认从第0条开始，每页10条
+      },
+
+// 获取日志数据
+      fetchLogs(offset, limit) {
+        this.$requests
+          .get("/log/getLogs", { offset, limit })  // 传递分页参数 offset 和 limit
+          .then((res) => {
+            if (res.data.code === 0) {  // 假设返回的code为0表示成功
+              const data = res.data.data;
+              if (data && Array.isArray(data.items)) {
+                this.logList = data.items;  // 获取日志列表
+                this.totalLogs = data.total; // 获取日志总数
+              } else {
+                console.error('日志数据格式错误或没有返回日志项');
+                this.logList = [];
+                this.totalLogs = 0;
+              }
+            } else {
+              this.$Message.error("获取操作日志失败");
+              this.logList = [];  // 出现错误时清空日志列表
+              this.totalLogs = 0;
+            }
+          })
+          .catch((error) => {
+            console.error("获取操作日志失败:", error);
+            this.$Message.error("请求失败，请检查网络");
+            this.logList = [];
+            this.totalLogs = 0;
+          });
+      },
+
+// 分页处理
+      handlePageChange(page) {
+        this.currentPage = page;
+        const offset = (page - 1) * 10;  // 每页10条
+        this.fetchLogs(offset, 10); // 根据页码和每页条数重新获取数据
+      },
       // 打开 Modal
       openResourceModal() {
         this.isResourceModalVisible = true; // 将 isResourceModalVisible 设置为 true，显示 Modal
@@ -327,6 +437,13 @@
         // 验证容器名称是否为空
         if (!this.newContainer.name) {
           this.errorMessage = '请填写容器名称！';
+          return;
+        }
+
+        // 验证容器名称是否已经存在
+        const isNameTaken = this.containerList.some(container => container.name === this.newContainer.name);
+        if (isNameTaken) {
+          this.errorMessage = '容器名称已存在，请选择其他名称！';
           return;
         }
 
@@ -635,7 +752,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" >
   #configModal {
 
     .ivu-modal-body {
@@ -699,4 +816,76 @@
       }
     }
   }
+
+  /* 控制Modal弹窗的最大高度 */
+  .el-dialog {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* 调整表格样式 */
+  .log-table {
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* 表格列的样式 */
+  .log-column {
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* 改变表格头部的背景色 */
+  .el-table__header {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+  }
+
+  /* 改变表格行的交替背景色 */
+  .el-table__row:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  /* 改变分页组件的样式 */
+  .log-pagination {
+    margin-top: 20px;
+    text-align: right;
+    padding: 10px;
+  }
+
+  /* 控制Modal内容的内边距 */
+  .el-dialog__body {
+    padding: 20px;
+  }
+
+  /* 控制分页组件的高度 */
+  .el-pagination {
+    padding: 0 20px;
+  }
+
+  /* 为表格列添加鼠标悬浮效果 */
+  .el-table th,
+  .el-table td {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .el-table th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  .el-table td {
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* 为表格添加阴影效果 */
+  .el-table {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
 </style>

@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
@@ -168,6 +169,7 @@ public class ContainerController {
      * @return ResultBean 返回操作结果
      */
     @PostMapping("saveContainer")  // 映射POST请求到"/container/saveContainer"
+    @Transactional(rollbackFor = Exception.class) // 确保发生异常时回滚事务
     public ResultBean saveContainer(@RequestBody Container container) {
         // 参数为空或容器ID为空时抛出异常
         if (null == container || null == container.getId()) {

@@ -10,7 +10,7 @@ import javax.crypto.SecretKey;
 public class JwtUtil {
 
     // 使用 MD5 加密的字符串作为密钥生成 HMAC-SHA 密钥
-    private static final SecretKey SECRET_KEY = Keys.hmacShaKeyFor(MD5Util.md5("XanderYe").getBytes());
+    private static final SecretKey SECRET_KEY = Keys.hmacShaKeyFor(MD5Util.md5("zpf").getBytes());
 
     /**
      * 编码用户名为 JWT
