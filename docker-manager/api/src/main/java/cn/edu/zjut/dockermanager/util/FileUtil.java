@@ -33,8 +33,6 @@ public class FileUtil {
      * @param sourcePath 源文件夹路径
      * @param targetPath 目标文件夹路径
      * @throws IOException 如果复制过程中出现 I/O 异常，抛出此异常
-     * @author XanderYe
-     * @date 2020/9/1
      */
     public static void copyDictionary(String sourcePath, String targetPath) throws IOException {
         File sourceFile = new File(sourcePath);
@@ -62,8 +60,6 @@ public class FileUtil {
      * 递归地删除文件夹及其中的所有文件和子文件夹。
      * @param filePath 文件夹路径
      * @throws IOException 如果删除过程中出现 I/O 异常，抛出此异常
-     * @author XanderYe
-     * @date 2020/9/1
      */
     public static void deleteDictionary(String filePath) throws IOException {
         Path path = Paths.get(filePath);
@@ -77,9 +73,7 @@ public class FileUtil {
      * 检查文件夹是否为空
      * 判断传入的文件夹是否包含文件或子文件夹。
      * @param files 文件夹中的文件数组
-     * @return boolean 如果文件夹非空，返回 true；否则返回 false
-     * @author XanderYe
-     * @date 2020/11/24
+     * @return boolean 如果文件夹非空，返回 true；否则返回 false4
      */
     public static boolean isNotEmpty(File[] files) {
         return null != files && files.length > 0;
@@ -89,8 +83,6 @@ public class FileUtil {
      * 删除单个文件
      * 删除指定路径的文件。
      * @param filePath 文件路径
-     * @author XanderYe
-     * @date 2020/9/1
      */
     private static void deleteFile(Path filePath) {
         try {

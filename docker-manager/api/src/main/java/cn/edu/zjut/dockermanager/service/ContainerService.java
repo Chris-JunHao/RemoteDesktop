@@ -100,7 +100,13 @@ public interface ContainerService {
      */
     String getVncPort(String id);
 
+    /**
+     * 每分钟读取cpu使用率存入redis
+     */
     void collectCpuUsage();
 
+    /**
+     * 每分钟读取内存使用率存入redis
+     */
     void collectMemoryUsage();
 }
