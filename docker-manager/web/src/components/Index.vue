@@ -303,6 +303,7 @@
       }
     },
     methods: {
+
       // 打开日志弹窗
       openLogsModal() {
         this.logsModalVisible = true;
@@ -346,7 +347,13 @@
       },
       // 打开 Modal
       openResourceModal() {
-        this.isResourceModalVisible = true; // 将 isResourceModalVisible 设置为 true，显示 Modal
+        this.isResourceModalVisible = true; // 打开弹窗
+        this.$nextTick(() => {
+          // 确保容器已经渲染完成后调整图表尺寸
+          if (this.chartInstance) {
+            this.chartInstance.resize();
+          }
+        });
       },
       // 获取 CPU 使用率数据
       fetchCpuUsage(containerName) {

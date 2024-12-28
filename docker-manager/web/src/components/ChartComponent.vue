@@ -30,9 +30,11 @@ export default {
       }
     }
   },
+
   mounted() {
     this.chartInstance = echarts.init(this.$refs.chart);
     this.updateChart(this.data);
+
     window.addEventListener('resize', this.resizeChart);
   },
   methods: {
@@ -143,13 +145,6 @@ export default {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 100%; /* 确保容器宽度为100% */
-  height: 500px; /* 高度可以根据需要调整 */
 }
 
-@media (max-width: 768px) {
-  .chart-container {
-    height: 400px; /* 在小屏幕下适当减小高度 */
-  }
-}
 </style>
