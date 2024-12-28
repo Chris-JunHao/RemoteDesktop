@@ -18,20 +18,21 @@ export default {
   },
   data() {
     return {
-      chartInstance: null
+      chartInstance: null,
+      previousData: null // 用来缓存上次的 data，避免重复更新
     };
   },
   watch: {
-    data: {
-      deep: true,
-      handler() {
-        this.updateChart();
+    data(newData) {
+      if (JSON.stringify(newData) !== JSON.stringify(this.previousData)) {
+        this.updateChart(newData);
+        this.previousData = newData;
       }
     }
   },
   mounted() {
     this.chartInstance = echarts.init(this.$refs.chart);
-    this.updateChart();
+    this.updateChart(this.data);
     window.addEventListener('resize', this.resizeChart);
   },
   methods: {
@@ -41,11 +42,11 @@ export default {
       return hours * 60 + minutes;
     },
 
-    updateChart() {
-      if (!this.chartInstance || !this.data) return;
+    updateChart(data) {
+      if (!this.chartInstance || !data) return;
 
       // 将数据转换为数组并按时间排序
-      const entries = Object.entries(this.data); // 获取数据的键值对
+      const entries = Object.entries(data); // 获取数据的键值对
       const sortedEntries = entries.sort((a, b) => this.timeToMinutes(a[0]) - this.timeToMinutes(b[0])); // 按分钟数排序
 
       // 分别提取排序后的时间和数据

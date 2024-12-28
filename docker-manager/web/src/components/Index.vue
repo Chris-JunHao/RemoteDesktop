@@ -43,16 +43,16 @@
       </div>
     </Modal>
     <!-- 资源利用窗口 -->
-    <Modal v-model="isResourceModalVisible" title="资源利用可视化" width="50%">
-      <div style="display: flex; flex-direction: column;">
+    <Modal v-model="isResourceModalVisible" title="资源利用可视化" :mask-closable="false" width="50%">
+      <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
         <!-- CPU 使用率图表 -->
-        <div>
+        <div style="flex-grow: 1; margin-bottom: 20px;">
           <h4>容器 CPU 使用率</h4>
           <ChartComponent :data="cpuData" title="CPU Usage" />
         </div>
 
         <!-- 内存使用率图表 -->
-        <div>
+        <div style="flex-grow: 1;">
           <h4>容器内存使用率</h4>
           <ChartComponent :data="memoryData" title="Memory Usage" />
         </div>
@@ -314,9 +314,6 @@
 
         this.fetchCpuUsage(row.name);
         this.fetchMemoryUsage(row.name);
-      },mounted() {
-        // 在组件挂载后请求 CPU 和内存使用率数据
-        this.fetchUsageData(this.row);
       },
       openCreateModal() {
         this.createModal = true;

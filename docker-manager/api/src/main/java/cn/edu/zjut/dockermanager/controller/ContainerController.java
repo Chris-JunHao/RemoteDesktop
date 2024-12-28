@@ -90,11 +90,12 @@ public class ContainerController {
         String name=params.getString("name");
         String hostport=params.getString("hostport");
         String type=params.getString("type");
-        if(Objects.equals(type, "KylinOS")){
-            SystemUtil.execStr("docker run -d --name "+name+" -p "+hostport+":6080 -v kylin_volume:/data kylin-vnc");
-        }else if(Objects.equals(type, "Ubuntu")){
-            SystemUtil.execStr("docker run -d --name "+name+" -p "+hostport+":6080 -v ubuntu_volume:/data ubuntu-vnc");
+        if (Objects.equals(type, "KylinOS")) {
+            SystemUtil.execStr("docker run -d --name " + name + " -p " + hostport + ":6080 -v kylin_volume:/data kylin-vnc");
+        } else if (Objects.equals(type, "Ubuntu")) {
+            SystemUtil.execStr("docker run -d --name " + name + " -p " + hostport + ":6080 -v ubuntu_volume:/data ubuntu-vnc");
         }
+
         return new ResultBean<>();  // 返回成功的结果
     }
 
