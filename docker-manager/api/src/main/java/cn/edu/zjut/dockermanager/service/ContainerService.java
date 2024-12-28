@@ -4,6 +4,7 @@ import cn.edu.zjut.dockermanager.entity.Container;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 容器服务接口
@@ -98,4 +99,8 @@ public interface ContainerService {
      * @return 对应的主机端口号，如果未找到则返回 null
      */
     String getVncPort(String id);
+
+    void collectCpuUsage();
+
+    void collectMemoryUsage();
 }

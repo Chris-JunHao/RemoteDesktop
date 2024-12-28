@@ -9,15 +9,15 @@ import cn.edu.zjut.dockermanager.util.FileUtil;
 import cn.edu.zjut.dockermanager.util.SystemUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TimeZone;
+import java.util.*;
 
 
 @Service
@@ -326,6 +326,7 @@ public class ContainerServiceImpl implements ContainerService {
         return SystemUtil.execStr("docker restart " + id);
     }
 
+    @Override
     public String getVncPort(String id) {
         // 通过容器 ID 获取容器对象
         Container container = getContainer(id);
@@ -338,4 +339,58 @@ public class ContainerServiceImpl implements ContainerService {
         }
         return null;
     }
+
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+
+    // 定义保留数据的最大时间，单位为毫秒 (40分钟)
+    private static final long MAX_DATA_RETENTION_TIME = 40 * 60 * 1000;  // 40分钟
+
+    @Scheduled(cron = "0 * * * * ?") // 每分钟执行一次
+    public void collectCpuUsage() {
+        long timestamp = System.currentTimeMillis(); // 获取当前时间戳
+        String statsOutput = SystemUtil.execStr("docker stats --no-stream --format \"{{.Name}} {{.CPUPerc}}\"");
+
+        for (String line : statsOutput.split("\n")) {
+            String[] parts = line.split(" ");
+            if (parts.length == 2) {
+                String containerName = parts[0];
+                String cpuUsage = parts[1];
+                String redisKey = "container:cpu:" + containerName;
+                redisTemplate.opsForHash().put(redisKey, String.valueOf(timestamp), cpuUsage);
+                removeOldData(redisKey, timestamp); // 删除超过40分钟的数据
+            }
+        }
+    }
+
+    @Scheduled(cron = "0 * * * * ?") // 每分钟执行一次
+    public void collectMemoryUsage() {
+        long timestamp = System.currentTimeMillis(); // 获取当前时间戳
+        String statsOutput = SystemUtil.execStr("docker stats --no-stream --format \"{{.Name}} {{.MemPerc}}\"");
+
+        for (String line : statsOutput.split("\n")) {
+            String[] parts = line.split(" ");
+            if (parts.length == 2) {
+                String containerName = parts[0];
+                String memoryUsage = parts[1];
+                String redisKey = "container:memory:" + containerName;
+                redisTemplate.opsForHash().put(redisKey, String.valueOf(timestamp), memoryUsage);
+                removeOldData(redisKey, timestamp); // 删除超过40分钟的数据
+            }
+        }
+    }
+
+    // 删除超过40分钟的数据
+    private void removeOldData(String redisKey, long currentTimestamp) {
+        Map<Object, Object> dataMap = redisTemplate.opsForHash().entries(redisKey);
+        if (dataMap != null) {
+            for (Map.Entry<Object, Object> entry : dataMap.entrySet()) {
+                long storedTimestamp = Long.parseLong(entry.getKey().toString());
+                if (currentTimestamp - storedTimestamp > MAX_DATA_RETENTION_TIME) {
+                    redisTemplate.opsForHash().delete(redisKey, entry.getKey());
+                }
+            }
+        }
+    }
+
 }

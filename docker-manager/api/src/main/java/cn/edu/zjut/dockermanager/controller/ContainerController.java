@@ -11,9 +11,15 @@ import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Objects;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * 容器管理控制器
@@ -27,6 +33,58 @@ public class ContainerController {
     @Autowired  // 自动注入容器服务
     private ContainerService containerService;
 
+    @Autowired
+    private StringRedisTemplate redisTemplate;
+
+    @GetMapping("getCpuUsage")
+    public ResultBean getCpuUsage(@RequestParam("containerName") String containerName) {
+        // Redis key
+        String redisKey = "container:cpu:" + containerName;
+        // 获取 Redis 中容器的 CPU 使用率数据
+        Map<Object, Object> cpuUsageMap = redisTemplate.opsForHash().entries(redisKey);
+        // 如果 Redis 中没有数据，返回空的结果
+        if (cpuUsageMap == null || cpuUsageMap.isEmpty()) {
+            return new ResultBean<>(new HashMap<>());
+        }
+        // 格式化时间戳为 "HH:mm" 格式，并将 CPU 使用率存入 Map，去除百分号并转换为数字
+        Map<String, String> formattedMap = cpuUsageMap.entrySet()
+                .stream()
+                .collect(Collectors.toMap(
+                        entry -> new SimpleDateFormat("HH:mm").format(new Date(Long.parseLong(entry.getKey().toString()))),
+                        entry -> entry.getValue().toString().replace("%", "") // 去除百分号
+                ));
+        // 返回 ResultBean 包装的数据
+        return new ResultBean<>(formattedMap);
+    }
+
+    // 获取容器的内存使用率
+    @GetMapping("getMemoryUsage")
+    public ResultBean getMemoryUsage(@RequestParam("containerName") String containerName) {
+        // Redis key
+        String redisKey = "container:memory:" + containerName;
+        // 获取 Redis 中容器的内存使用率数据
+        Map<Object, Object> memoryUsageMap = redisTemplate.opsForHash().entries(redisKey);
+        // 如果 Redis 中没有数据，返回空的结果
+        if (memoryUsageMap == null || memoryUsageMap.isEmpty()) {
+            return new ResultBean<>(new HashMap<>());
+        }
+        // 格式化时间戳为 "HH:mm" 格式，并将内存使用率存入 Map，去除百分号并转换为数字
+        Map<String, String> formattedMap = memoryUsageMap.entrySet()
+                .stream()
+                .collect(Collectors.toMap(
+                        entry -> new SimpleDateFormat("HH:mm").format(new Date(Long.parseLong(entry.getKey().toString()))),
+                        entry -> entry.getValue().toString().replace("%", "") // 去除百分号
+                ));
+        // 返回 ResultBean 包装的数据
+        return new ResultBean<>(formattedMap);
+    }
+
+
+    /**
+     * 根据镜像创建容器
+     * @param params
+     * @return
+     */
     @PostMapping("createContainer")
     public ResultBean createContainer(@RequestBody JSONObject params){
         String name=params.getString("name");

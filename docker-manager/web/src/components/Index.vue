@@ -42,6 +42,22 @@
         <Button type="primary" @click="createContainer" :loading="createModalLoading">确认</Button>
       </div>
     </Modal>
+    <!-- 资源利用窗口 -->
+    <Modal v-model="isResourceModalVisible" title="资源利用可视化" width="800px">
+      <div style="display: flex; flex-direction: column;">
+        <!-- CPU 使用率图表 -->
+        <div>
+          <h4>容器 CPU 使用率</h4>
+          <ChartComponent :data="cpuData" title="CPU Usage" />
+        </div>
+
+        <!-- 内存使用率图表 -->
+        <div>
+          <h4>容器内存使用率</h4>
+          <ChartComponent :data="memoryData" title="Memory Usage" />
+        </div>
+      </div>
+    </Modal>
     <Modal id="configModal" title="修改配置" v-model="configModal" :mask-closable="false" width="50%">
       <Tabs :value="defaultTab" v-if="container">
         <TabPane label="卷" name="mount">
@@ -108,11 +124,16 @@
 
 <script>
   import router from "../router";
+  import ChartComponent from "./ChartComponent.vue";  // 引入 ChartComponent 组件
 
   export default {
     name: "Index",
+    components: {ChartComponent},
     data() {
       return {
+        isResourceModalVisible: false, // 控制 Modal 显示与隐藏
+        cpuData: {},  // 存储 CPU 使用率数据
+        memoryData: {}, // 存储内存使用率数据
         createModal: false,
         createModalLoading: false,
         newContainer: {
@@ -222,11 +243,78 @@
                 }, "确定")
               ]);
             }
+          },
+          {
+            title: "资源利用",
+            key: "resource",
+            render: (h, params) => {
+              const row = params.row;
+
+              return h("div", [
+                h("Button", {
+                  props: {
+                    type: "default"
+                  },
+                  on: {
+                    click: async () => {
+                      // 通过 row 获取容器 ID，调用 fetchUsageData
+                      await this.fetchUsageData(row);
+                      this.openResourceModal();
+                    }
+                  }
+                }, "...")
+              ]);
+            }
           }
         ]
       }
     },
     methods: {
+      // 打开 Modal
+      openResourceModal() {
+        this.isResourceModalVisible = true; // 将 isResourceModalVisible 设置为 true，显示 Modal
+      },
+      // 获取 CPU 使用率数据
+      fetchCpuUsage(containerName) {
+        this.$requests
+          .get("/container/getCpuUsage", {containerName:containerName })
+          .then((res) => {
+            if (res.data.code === 0) {
+              this.cpuData = res.data.data; // 更新 CPU 数据
+            } else {
+              this.$Message.error("获取 CPU 使用率失败");
+            }
+          })
+          .catch((error) => {
+            this.$Message.error("请求失败，请检查网络");
+          });
+      },
+
+// 获取内存使用率数据
+      fetchMemoryUsage(containerName) {
+        this.$requests
+          .get("/container/getMemoryUsage", {containerName:containerName })
+          .then(res => {
+            if (res.data.code === 0) {
+              this.memoryData = res.data.data;
+            } else {
+              this.$Message.error("获取内存使用率失败");
+            }
+          })
+          .catch(err => {
+            this.$Message.error("请求失败，请检查网络");
+          });
+      },
+// 主方法，调用两个独立的方法
+      fetchUsageData(row) {
+        if (!row.name) {
+          this.$Message.error("容器名称不存在");
+          return;
+        }
+
+        this.fetchCpuUsage(row.name);
+        this.fetchMemoryUsage(row.name);
+      },
       openCreateModal() {
         this.createModal = true;
         this.newContainer = { name: '', port: '', os: '' }; // 清空表单
