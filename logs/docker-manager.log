@@ -1,0 +1,947 @@
+2024-12-29 00:01:54.360  INFO 13268 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:02:13.692  INFO 13268 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:02:30.748  INFO 13268 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:03:12.053  INFO 13268 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:03:12.057  INFO 13268 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 00:03:12.057  INFO 13268 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:03:12.057  INFO 13268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 00:03:12.066  INFO 13268 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 00:03:17.996  INFO 30108 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 30108 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-29 00:03:17.997  INFO 30108 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-29 00:03:18.465  INFO 30108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:03:18.465  INFO 30108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-12-29 00:03:18.477  INFO 30108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2024-12-29 00:03:18.485  INFO 30108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:03:18.485  INFO 30108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-29 00:03:18.493  INFO 30108 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2024-12-29 00:03:18.919  INFO 30108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-29 00:03:18.925  INFO 30108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29 00:03:18.925  INFO 30108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-29 00:03:18.926  INFO 30108 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-29 00:03:18.926  INFO 30108 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-29 00:03:18.927  INFO 30108 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-29 00:03:18.930  INFO 30108 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-29 00:03:18.983  INFO 30108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29 00:03:18.983  INFO 30108 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 960 ms
+2024-12-29 00:03:19.083  INFO 30108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:03:19.090  INFO 30108 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2024-12-29 00:03:19.113  INFO 30108 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 00:03:19.141  INFO 30108 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2024-12-29 00:03:19.218  INFO 30108 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-12-29 00:03:19.274  INFO 30108 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29 00:03:19.382  INFO 30108 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29 00:03:19.395  INFO 30108 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2024-12-29 00:03:19.585  INFO 30108 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-29 00:03:19.590  INFO 30108 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:03:19.844  WARN 30108 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 00:03:20.120  INFO 30108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-29 00:03:20.121  INFO 30108 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2024-12-29 00:03:20.121  INFO 30108 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2024-12-29 00:03:20.128  INFO 30108 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.387 seconds (JVM running for 3.559)
+2024-12-29 00:03:20.331  INFO 30108 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29 00:03:20.331  INFO 30108 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29 00:03:20.343  INFO 30108 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2024-12-29 00:03:34.187 ERROR 30108 --- [http-nio-8081-exec-10] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:03:34.247 ERROR 30108 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:03:34.814 ERROR 30108 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:03:35.996  INFO 30108 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:03:38.895  INFO 30108 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 00:03:39.511  INFO 30108 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:03:42.028 ERROR 30108 --- [http-nio-8081-exec-8] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:03:45.701 ERROR 30108 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:04:03.397  INFO 30108 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 00:04:03.397  INFO 30108 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 00:04:23.099  INFO 30108 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 00:04:23.699  INFO 30108 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:06:53.031  INFO 30108 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:06:54.849  INFO 30108 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 00:06:54.849  INFO 30108 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 00:06:57.726 ERROR 30108 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:07:33.078 ERROR 30108 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:14:36.366  INFO 30108 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:15:11.387  INFO 30108 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:15:18.350 ERROR 30108 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:43.057  INFO 30108 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:17:43.065  INFO 30108 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 00:17:43.065  INFO 30108 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:17:43.065  INFO 30108 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 00:17:43.072  INFO 30108 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 00:17:47.306  INFO 15760 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 15760 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-29 00:17:47.307  INFO 15760 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-29 00:17:47.822  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:17:47.823  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-12-29 00:17:47.833  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2024-12-29 00:17:47.840  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:17:47.841  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-29 00:17:47.847  INFO 15760 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2024-12-29 00:17:48.284  INFO 15760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-29 00:17:48.290  INFO 15760 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29 00:17:48.291  INFO 15760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-29 00:17:48.292  INFO 15760 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-29 00:17:48.292  INFO 15760 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-29 00:17:48.292  INFO 15760 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-29 00:17:48.304  INFO 15760 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-29 00:17:48.360  INFO 15760 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29 00:17:48.360  INFO 15760 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1025 ms
+2024-12-29 00:17:48.463  INFO 15760 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:17:48.471  INFO 15760 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2024-12-29 00:17:48.501  INFO 15760 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 00:17:48.544  INFO 15760 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2024-12-29 00:17:48.638  INFO 15760 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-12-29 00:17:48.695  INFO 15760 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29 00:17:48.827  INFO 15760 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29 00:17:48.841  INFO 15760 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2024-12-29 00:17:49.009  INFO 15760 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-29 00:17:49.014  INFO 15760 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:17:49.251  WARN 15760 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 00:17:49.570  INFO 15760 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-29 00:17:49.571  INFO 15760 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2024-12-29 00:17:49.571  INFO 15760 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2024-12-29 00:17:49.580  INFO 15760 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.509 seconds (JVM running for 3.641)
+2024-12-29 00:17:49.656  INFO 15760 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29 00:17:49.656  INFO 15760 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29 00:17:49.661  INFO 15760 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-12-29 00:17:53.069 ERROR 15760 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.145 ERROR 15760 --- [http-nio-8081-exec-10] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.212 ERROR 15760 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.413 ERROR 15760 --- [http-nio-8081-exec-8] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.455 ERROR 15760 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.483 ERROR 15760 --- [http-nio-8081-exec-7] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.488 ERROR 15760 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.844 ERROR 15760 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:53.927 ERROR 15760 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:17:55.000  INFO 15760 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:17:57.129  INFO 15760 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 00:17:57.604  INFO 15760 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:17:59.702  INFO 15760 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:18:00.639 ERROR 15760 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:18:09.577 ERROR 15760 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:18:23.971  INFO 15760 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 00:18:24.441  INFO 15760 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:18:25.490  INFO 15760 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:18:29.447 ERROR 15760 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:18:39.702 ERROR 15760 --- [http-nio-8081-exec-10] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:20:47.869  INFO 15760 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getContainerConfig, username=user
+2024-12-29 00:22:42.375 ERROR 15760 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:24:11.343  INFO 15760 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:24:13.262 ERROR 15760 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:24:29.053 ERROR 15760 --- [http-nio-8081-exec-8] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:26:01.120  INFO 15760 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:26:01.371  INFO 15760 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:26:28.499  INFO 15760 --- [http-nio-8081-exec-26] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:26:37.025  INFO 15760 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:26:39.830  INFO 15760 --- [http-nio-8081-exec-27] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:28:38.580  INFO 15760 --- [http-nio-8081-exec-12] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:28:52.946  INFO 15760 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:28:52.948  INFO 15760 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 00:28:52.949  INFO 15760 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:28:52.949  INFO 15760 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 00:28:52.955  INFO 15760 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 00:28:55.633  INFO 30384 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 30384 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-29 00:28:55.634  INFO 30384 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-29 00:28:56.313  INFO 30384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:28:56.313  INFO 30384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-12-29 00:28:56.330  INFO 30384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 JPA repository interfaces.
+2024-12-29 00:28:56.341  INFO 30384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:28:56.342  INFO 30384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-29 00:28:56.353  INFO 30384 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 Redis repository interfaces.
+2024-12-29 00:28:56.912  INFO 30384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-29 00:28:56.918  INFO 30384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29 00:28:56.918  INFO 30384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-29 00:28:56.919  INFO 30384 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-29 00:28:56.919  INFO 30384 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-29 00:28:56.919  INFO 30384 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-29 00:28:56.923  INFO 30384 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-29 00:28:56.984  INFO 30384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29 00:28:56.985  INFO 30384 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1315 ms
+2024-12-29 00:28:57.106  INFO 30384 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:28:57.115  INFO 30384 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2024-12-29 00:28:57.150  INFO 30384 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 00:28:57.184  INFO 30384 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2024-12-29 00:28:57.267  INFO 30384 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-12-29 00:28:57.335  INFO 30384 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29 00:28:57.447  INFO 30384 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29 00:28:57.464  INFO 30384 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2024-12-29 00:28:57.666  INFO 30384 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-29 00:28:57.672  INFO 30384 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:28:57.926  WARN 30384 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 00:28:58.225  INFO 30384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-29 00:28:58.226  INFO 30384 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2024-12-29 00:28:58.226  INFO 30384 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2024-12-29 00:28:58.234  INFO 30384 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.907 seconds (JVM running for 4.082)
+2024-12-29 00:28:58.347  INFO 30384 --- [http-nio-8081-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29 00:28:58.347  INFO 30384 --- [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29 00:28:58.352  INFO 30384 --- [http-nio-8081-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-29 00:29:00.941  INFO 30384 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:32:23.409  WARN 30384 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m48s614ms451µs900ns).
+2024-12-29 00:32:24.911 ERROR 30384 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1227) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1206) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:970) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:355) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:134) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:97) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:84) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:215) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.core.DefaultHashOperations.put(DefaultHashOperations.java:191) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at cn.edu.zjut.dockermanager.service.impl.ContainerServiceImpl.collectCpuUsage(ContainerServiceImpl.java:361) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93) ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78) ~[lettuce-core-5.3.1.RELEASE.jar:5.3.1.RELEASE]
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56) ~[lettuce-core-5.3.1.RELEASE.jar:5.3.1.RELEASE]
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:230) ~[lettuce-core-5.3.1.RELEASE.jar:5.3.1.RELEASE]
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:207) ~[lettuce-core-5.3.1.RELEASE.jar:5.3.1.RELEASE]
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at java.base/java.util.Optional.orElseGet(Optional.java:369) ~[na:na]
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1225) ~[spring-data-redis-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	... 25 common frames omitted
+Caused by: java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385) ~[na:na]
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2005) ~[na:na]
+	at io.lettuce.core.DefaultConnectionFuture.get(DefaultConnectionFuture.java:68) ~[lettuce-core-5.3.1.RELEASE.jar:5.3.1.RELEASE]
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:227) ~[lettuce-core-5.3.1.RELEASE.jar:5.3.1.RELEASE]
+	... 30 common frames omitted
+
+2024-12-29 00:32:25.036  INFO 30384 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:32:25.038  INFO 30384 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 00:32:25.038  INFO 30384 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:32:25.038  INFO 30384 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 00:32:25.045  INFO 30384 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 00:32:28.052  INFO 16068 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 16068 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-29 00:32:28.053  INFO 16068 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-29 00:32:28.551  INFO 16068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:32:28.551  INFO 16068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-12-29 00:32:28.561  INFO 16068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2024-12-29 00:32:28.569  INFO 16068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:32:28.570  INFO 16068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-29 00:32:28.575  INFO 16068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2024-12-29 00:32:28.962  INFO 16068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-29 00:32:28.968  INFO 16068 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29 00:32:28.968  INFO 16068 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-29 00:32:28.969  INFO 16068 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-29 00:32:28.970  INFO 16068 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-29 00:32:28.970  INFO 16068 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-29 00:32:28.973  INFO 16068 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-29 00:32:29.023  INFO 16068 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29 00:32:29.023  INFO 16068 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 939 ms
+2024-12-29 00:32:29.123  INFO 16068 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:32:29.132  INFO 16068 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2024-12-29 00:32:29.157  INFO 16068 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 00:32:29.185  INFO 16068 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2024-12-29 00:32:29.260  INFO 16068 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-12-29 00:32:29.314  INFO 16068 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29 00:32:29.408  INFO 16068 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29 00:32:29.422  INFO 16068 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2024-12-29 00:32:29.605  INFO 16068 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-29 00:32:29.610  INFO 16068 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:32:29.889  WARN 16068 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 00:32:30.205  INFO 16068 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-29 00:32:30.205  INFO 16068 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2024-12-29 00:32:30.206  INFO 16068 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2024-12-29 00:32:30.213  INFO 16068 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.427 seconds (JVM running for 3.93)
+2024-12-29 00:32:30.734  INFO 16068 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29 00:32:30.734  INFO 16068 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29 00:32:30.739  INFO 16068 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-12-29 00:32:38.881  INFO 16068 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:32:45.429 ERROR 16068 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:32:45.771 ERROR 16068 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:32:46.075 ERROR 16068 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:32:46.188 ERROR 16068 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:32:47.278  INFO 16068 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:32:49.309  INFO 16068 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 00:32:49.844  INFO 16068 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:32:50.974  INFO 16068 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:32:53.839  INFO 16068 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 00:32:55.568  INFO 16068 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:33:10.358  INFO 16068 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:33:46.091  INFO 16068 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:33:50.766  INFO 16068 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:36:05.511 ERROR 16068 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 00:36:37.433  INFO 16068 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:44:38.782  INFO 16068 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:45:01.494  INFO 16068 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 00:45:01.494  INFO 16068 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 00:48:10.418  INFO 16068 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:48:10.421  INFO 16068 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 00:48:10.422  INFO 16068 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:48:10.422  INFO 16068 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 00:48:10.430  INFO 16068 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 00:51:36.685  INFO 28088 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 28088 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-29 00:51:36.687  INFO 28088 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-29 00:51:37.150  INFO 28088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:51:37.150  INFO 28088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-12-29 00:51:37.161  INFO 28088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2024-12-29 00:51:37.171  INFO 28088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 00:51:37.171  INFO 28088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-29 00:51:37.178  INFO 28088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2024-12-29 00:51:37.587  INFO 28088 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-29 00:51:37.594  INFO 28088 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29 00:51:37.594  INFO 28088 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-29 00:51:37.595  INFO 28088 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-29 00:51:37.595  INFO 28088 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-29 00:51:37.595  INFO 28088 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-29 00:51:37.608  INFO 28088 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-29 00:51:37.660  INFO 28088 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29 00:51:37.660  INFO 28088 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 934 ms
+2024-12-29 00:51:37.757  INFO 28088 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-29 00:51:37.764  INFO 28088 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2024-12-29 00:51:37.790  INFO 28088 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 00:51:37.834  INFO 28088 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2024-12-29 00:51:37.919  INFO 28088 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-12-29 00:51:37.967  INFO 28088 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29 00:51:38.179  INFO 28088 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29 00:51:38.192  INFO 28088 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2024-12-29 00:51:38.426  INFO 28088 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-29 00:51:38.430  INFO 28088 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 00:51:38.718  WARN 28088 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 00:51:39.011  INFO 28088 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-29 00:51:39.012  INFO 28088 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2024-12-29 00:51:39.012  INFO 28088 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2024-12-29 00:51:39.020  INFO 28088 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.703 seconds (JVM running for 3.95)
+2024-12-29 00:51:51.275  INFO 28088 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29 00:51:51.275  INFO 28088 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29 00:51:51.280  INFO 28088 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-12-29 00:51:55.236  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:51:59.287  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:52:01.027  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:52:04.854  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 00:52:04.854  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 00:52:09.549  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:54:06.693  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:54:50.883  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:56:37.810  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:58:04.314  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 00:58:04.655  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:58:32.204  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 00:59:01.811  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:00:20.723  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:06:37.729  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:06:39.280  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:06:50.953  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:07:11.930  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 01:07:11.931  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 01:09:32.997  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:12:14.933  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:12:22.644  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:12:31.059  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:13:12.422  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:13:12.758  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:13:14.201  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:13:35.986  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:15:21.107  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:17:35.977  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:19:56.367  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:22:53.709  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:23:45.576  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:24:24.694  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:26:05.118  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:26:47.509  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:28:00.959  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:28:34.458  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:28:42.908  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:32:12.881  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:32:14.079  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:15.309  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:33:16.081  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:19.840  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:20.020  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:20.379  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:20.531  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:21.724  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:22.400  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:23.744  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:25.716  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:26.061  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:26.253  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:26.428  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:27.880  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:28.304  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:28.614  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:32.792  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:35.218  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:35.559  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:36.709  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:37.079  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:37.411  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:39.431  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:33:43.676  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:34:02.007  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:36.717  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:35:38.587  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:41.778  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:41.948  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:42.091  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:42.264  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:43.478  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:43.770  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:44.060  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:44.233  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:44.408  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:44.604  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:44.834  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:45.972  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:35:46.573  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:41.347  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:44.394  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:44.768  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:45.659  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:45.985  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:46.982  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:47.214  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:47.638  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:48.520  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:49.107  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:59.274  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:59.630  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:59.803  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:37:59.985  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:00.912  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:01.087  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:01.265  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:01.410  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:01.595  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:01.751  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:02.304  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:02.493  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:05.843  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:06.706  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:07.084  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:08.731  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:09.280  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:09.520  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:09.780  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:12.050  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:12.763  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:14.731  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:15.408  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:16.085  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:16.647  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:17.117  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:17.424  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:38:29.604  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:40:56.807  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:40:58.034  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:03.681  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:04.004  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:04.325  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:04.650  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:06.006  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:06.393  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:06.591  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:06.780  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:07.037  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:07.526  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:07.753  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:07.922  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:08.103  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:08.482  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:08.715  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:08.904  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:09.100  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:10.949  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:11.400  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:11.794  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:14.484  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:15.861  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:16.546  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:16.967  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:18.916  INFO 28088 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:19.121  INFO 28088 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:19.563  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:19.800  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:20.199  INFO 28088 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:20.407  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:20.624  INFO 28088 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:20.906  INFO 28088 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:21.121  INFO 28088 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:21.565  INFO 28088 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:21.761  INFO 28088 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:21.958  INFO 28088 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:41:22.193  INFO 28088 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:44:35.863  INFO 28088 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 01:44:35.867  INFO 28088 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 01:44:35.867  INFO 28088 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 01:44:35.867  INFO 28088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 01:44:35.871  INFO 28088 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 01:44:41.516  INFO 21272 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 21272 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-29 01:44:41.518  INFO 21272 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-29 01:44:41.981  INFO 21272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 01:44:41.981  INFO 21272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-12-29 01:44:41.992  INFO 21272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2024-12-29 01:44:41.998  INFO 21272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 01:44:41.999  INFO 21272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-29 01:44:42.005  INFO 21272 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2024-12-29 01:44:42.392  INFO 21272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-29 01:44:42.397  INFO 21272 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29 01:44:42.397  INFO 21272 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-29 01:44:42.398  INFO 21272 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-29 01:44:42.398  INFO 21272 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-29 01:44:42.398  INFO 21272 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-29 01:44:42.410  INFO 21272 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-29 01:44:42.463  INFO 21272 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29 01:44:42.463  INFO 21272 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 915 ms
+2024-12-29 01:44:42.573  INFO 21272 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-29 01:44:42.580  INFO 21272 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2024-12-29 01:44:42.608  INFO 21272 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 01:44:42.647  INFO 21272 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2024-12-29 01:44:42.729  INFO 21272 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-12-29 01:44:42.778  INFO 21272 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29 01:44:42.881  INFO 21272 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29 01:44:42.896  INFO 21272 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2024-12-29 01:44:43.091  INFO 21272 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-29 01:44:43.098  INFO 21272 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 01:44:43.381  WARN 21272 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 01:44:43.669  INFO 21272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-12-29 01:44:43.671  INFO 21272 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2024-12-29 01:44:43.671  INFO 21272 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2024-12-29 01:44:43.678  INFO 21272 --- [main] cn.edu.zjut.dockermanager.Application    : Started Application in 2.438 seconds (JVM running for 3.535)
+2024-12-29 01:44:46.458  INFO 21272 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-29 01:44:46.458  INFO 21272 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-29 01:44:46.464  INFO 21272 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-12-29 01:44:47.356  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:44:51.739 ERROR 21272 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 01:44:52.198 ERROR 21272 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 01:44:54.054  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:44:55.034  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 01:44:55.532  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 01:44:56.415  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:44:59.381  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 01:45:00.762  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:45:05.815  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:46:59.925  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:47:05.338  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:47:46.630  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:49:57.451  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:52:54.901  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:53:06.624  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 01:53:07.058  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:54:17.145  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:59:02.178  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 01:59:08.075  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:01:28.155  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:01:33.528  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:01:34.524  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:02:00.072  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:10:15.816  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:15:39.387  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:15:40.536  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:16:43.306  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:17:16.966  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:17:17.240  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:22:13.587  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:22:14.206  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:22:25.582  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:25.973  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:27.135  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:27.573  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:28.049  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:28.539  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:29.146  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:29.670  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:30.102  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:30.584  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:31.536  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:22:37.341  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:37.755  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:38.177  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:38.524  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:38.947  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 02:22:39.340  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:39.796  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:40.452  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:40.936  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:41.501  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 02:22:42.381  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:22:44.709  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:22:45.448  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:22:46.731  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:22:48.739  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:24:28.104  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:24:29.314  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:28:31.588  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:28:32.072  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:28:50.285  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:28:55.063  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:28:55.855  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:28:57.100  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:28:58.292  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:29:08.031  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:29:10.002  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:29:13.597  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:30:52.011  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:30:52.011  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:31:31.994  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:31:32.189  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:31:59.962  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:31:59.963  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:37:26.419  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:38:01.789  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:38:01.789  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:38:14.307  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:40:35.212  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:40:35.212  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:40:45.047  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:40:45.047  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:40:51.157  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:40:51.157  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:41:01.038  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:43:35.342  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:43:35.343  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:48:27.682  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:48:44.456  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:48:56.832  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:48:56.832  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:49:01.155  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:49:01.155  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:49:02.627  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:49:02.627  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:49:04.431  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:49:04.431  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:49:44.385  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:49:44.385  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:54:02.914  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:54:02.914  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:54:42.207  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:55:02.824  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:55:02.824  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:56:04.222  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:56:04.222  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:58:16.666  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 02:58:17.290  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 02:58:24.690  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:58:24.690  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:58:48.053  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 02:58:48.053  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 02:59:54.740  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:00:08.673  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 03:00:10.875  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:00:10.881  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:01:08.445  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:01:08.445  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:02:33.368  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:02:33.368  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:03:58.159  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:03:58.160  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:04:04.166 ERROR 21272 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:04:04.805  WARN 21272 --- [http-nio-8081-exec-2] org.apache.catalina.connector.Request    : Creating the temporary upload location [C:\Users\朱鹏飞1\AppData\Local\Temp\tomcat.6189917143200569297.8081\work\Tomcat\localhost\ROOT] as it is required by the servlet [dispatcherServlet]
+2024-12-29 03:04:05.870  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:04:06.962  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:04:06.962  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:04:11.265  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:04:11.265  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:04:14.814  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:04:14.814  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:04:29.496  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:04:29.496  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:04:34.635  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:04:35.947  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:04:35.947  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:04:49.715  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:04:49.715  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:05:40.063  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:05:40.063  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:05:58.972  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:06:00.682  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:06:00.682  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:06:12.773  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:06:12.773  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:06:33.952  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:06:33.952  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:07:03.891  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:07:03.891  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:08:11.099  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:08:11.100  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:08:14.369 ERROR 21272 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:08:16.318  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:08:17.516  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:08:17.516  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:08:26.466  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:08:27.387  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:08:27.387  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:08:38.378 ERROR 21272 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:08:38.882 ERROR 21272 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:08:40.400  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:08:41.494  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:08:41.494  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:08:54.396  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:08:54.396  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:08:59.364 ERROR 21272 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:08:59.896 ERROR 21272 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:01.739 ERROR 21272 --- [http-nio-8081-exec-8] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:01.815 ERROR 21272 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:02.362 ERROR 21272 --- [http-nio-8081-exec-7] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:02.886 ERROR 21272 --- [http-nio-8081-exec-10] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:04.737 ERROR 21272 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:04.812 ERROR 21272 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:05.369 ERROR 21272 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:05.901 ERROR 21272 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:07.743 ERROR 21272 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:07.819 ERROR 21272 --- [http-nio-8081-exec-8] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:08.362 ERROR 21272 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:08.886 ERROR 21272 --- [http-nio-8081-exec-7] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:10.735 ERROR 21272 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:10.812 ERROR 21272 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:11.369 ERROR 21272 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:11.882 ERROR 21272 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:13.734 ERROR 21272 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:13.811 ERROR 21272 --- [http-nio-8081-exec-2] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:14.372 ERROR 21272 --- [http-nio-8081-exec-8] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:14.886 ERROR 21272 --- [http-nio-8081-exec-9] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:16.732 ERROR 21272 --- [http-nio-8081-exec-10] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:16.809 ERROR 21272 --- [http-nio-8081-exec-6] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:17.368 ERROR 21272 --- [http-nio-8081-exec-4] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:17.891 ERROR 21272 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:19.730 ERROR 21272 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:19.821 ERROR 21272 --- [http-nio-8081-exec-5] c.e.z.d.e.GlobalExceptionHandler         : 账号认证异常
+2024-12-29 03:09:21.082  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/docker/info, username=user
+2024-12-29 03:09:52.650  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/createContainer, username=user
+2024-12-29 03:09:53.409 ERROR 21272 --- [http-nio-8081-exec-1] c.e.z.d.e.GlobalExceptionHandler         : begin 0, end -1, length 20
+
+java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 20
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:3319) ~[na:na]
+	at java.base/java.lang.String.substring(String.java:1874) ~[na:na]
+	at cn.edu.zjut.dockermanager.service.impl.ContainerServiceImpl.parseStatus(ContainerServiceImpl.java:44) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.service.impl.ContainerServiceImpl.getContainerStatusList(ContainerServiceImpl.java:165) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.controller.ContainerController.getContainerStatusList(ContainerController.java:133) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.controller.ContainerController$$FastClassBySpringCGLIB$$4ffeb250.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at cn.edu.zjut.dockermanager.controller.ContainerController$$EnhancerBySpringCGLIB$$72c6c948.getContainerStatusList(<generated>) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor47.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at cn.edu.zjut.dockermanager.filter.CorsFilter.doFilter(CorsFilter.java:52) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2024-12-29 03:09:53.909 ERROR 21272 --- [http-nio-8081-exec-3] c.e.z.d.e.GlobalExceptionHandler         : begin 0, end -1, length 20
+
+java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 20
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:3319) ~[na:na]
+	at java.base/java.lang.String.substring(String.java:1874) ~[na:na]
+	at cn.edu.zjut.dockermanager.service.impl.ContainerServiceImpl.parseStatus(ContainerServiceImpl.java:44) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.service.impl.ContainerServiceImpl.getContainerStatusList(ContainerServiceImpl.java:165) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.controller.ContainerController.getContainerStatusList(ContainerController.java:133) ~[classes/:na]
+	at cn.edu.zjut.dockermanager.controller.ContainerController$$FastClassBySpringCGLIB$$4ffeb250.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at cn.edu.zjut.dockermanager.controller.ContainerController$$EnhancerBySpringCGLIB$$72c6c948.getContainerStatusList(<generated>) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor47.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at cn.edu.zjut.dockermanager.filter.CorsFilter.doFilter(CorsFilter.java:52) ~[classes/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2024-12-29 03:10:00.079  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 03:10:04.136  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getContainerConfig, username=user
+2024-12-29 03:10:21.142  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/saveContainer, username=user
+2024-12-29 03:10:22.731  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/docker/restart, username=user
+2024-12-29 03:10:29.747  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getContainerConfig, username=user
+2024-12-29 03:10:43.107  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/start, username=user
+2024-12-29 03:10:49.064  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getVncPort, username=user
+2024-12-29 03:11:07.436  INFO 21272 --- [http-nio-8081-exec-6] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:11:07.436  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:11:18.223  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:11:18.223  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:11:38.267  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/createContainer, username=user
+2024-12-29 03:11:43.429  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getVncPort, username=user
+2024-12-29 03:14:17.021  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:14:17.021  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:14:19.821  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:14:19.822  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:14:23.216  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:14:23.216  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:15:02.290  INFO 21272 --- [http-nio-8081-exec-9] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:15:02.290  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:15:06.765  INFO 21272 --- [http-nio-8081-exec-4] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:15:06.766  INFO 21272 --- [http-nio-8081-exec-5] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:15:12.566  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:15:12.566  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:15:18.305  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 03:15:19.900  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=POST, uri=/container/stop, username=user
+2024-12-29 03:15:22.044  INFO 21272 --- [http-nio-8081-exec-7] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 03:15:26.905  INFO 21272 --- [http-nio-8081-exec-3] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 03:15:32.500  INFO 21272 --- [http-nio-8081-exec-1] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 03:15:34.313  INFO 21272 --- [http-nio-8081-exec-8] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/log/getLogs, username=user
+2024-12-29 03:16:29.769  INFO 21272 --- [http-nio-8081-exec-10] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getCpuUsage, username=user
+2024-12-29 03:16:29.770  INFO 21272 --- [http-nio-8081-exec-2] c.e.z.d.interceptor.LoginInterceptor     : remoteAddr=127.0.0.1,  method=GET, uri=/container/getMemoryUsage, username=user
+2024-12-29 03:17:18.393  INFO 21272 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 03:17:18.421  INFO 21272 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 03:17:18.422  INFO 21272 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 03:17:18.422  INFO 21272 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 03:17:18.432  INFO 21272 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 13:22:31.592  INFO 41976 --- [main] cn.edu.zjut.dockermanager.Application    : Starting Application on zpf with PID 41976 (D:\RemoteDesktop\docker-manager\api\target\classes started by 朱鹏飞1 in D:\RemoteDesktop)
+2024-12-29 13:22:31.594  INFO 41976 --- [main] cn.edu.zjut.dockermanager.Application    : No active profile set, falling back to default profiles: default
+2024-12-29 13:22:32.168  INFO 41976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 13:22:32.169  INFO 41976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2024-12-29 13:22:32.185  INFO 41976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 0 JPA repository interfaces.
+2024-12-29 13:22:32.197  INFO 41976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2024-12-29 13:22:32.197  INFO 41976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-29 13:22:32.207  INFO 41976 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2024-12-29 13:22:32.730  INFO 41976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-12-29 13:22:32.737  INFO 41976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-29 13:22:32.737  INFO 41976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2024-12-29 13:22:32.739  INFO 41976 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.3.0] using APR version [1.7.4].
+2024-12-29 13:22:32.740  INFO 41976 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2024-12-29 13:22:32.740  INFO 41976 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-12-29 13:22:32.847  INFO 41976 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-12-29 13:22:32.923  INFO 41976 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-29 13:22:32.923  INFO 41976 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1291 ms
+2024-12-29 13:22:33.068  INFO 41976 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-12-29 13:22:33.084  INFO 41976 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2024-12-29 13:22:33.125  INFO 41976 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-29 13:22:33.176  INFO 41976 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2024-12-29 13:22:33.282  INFO 41976 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2024-12-29 13:22:33.359  INFO 41976 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-29 13:22:33.743  INFO 41976 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-29 13:22:33.756  INFO 41976 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2024-12-29 13:22:34.065  INFO 41976 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-29 13:22:34.070  INFO 41976 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 13:23:04.231  WARN 41976 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-29 13:23:04.523  WARN 41976 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8081 is already in use
+2024-12-29 13:23:04.541  INFO 41976 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-29 13:23:04.542  INFO 41976 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2024-12-29 13:23:04.543  INFO 41976 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-12-29 13:23:04.543  INFO 41976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-29 13:23:04.550  INFO 41976 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-29 13:23:04.552  INFO 41976 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-12-29 13:23:04.558  INFO 41976 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-12-29 13:23:04.559 ERROR 41976 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+

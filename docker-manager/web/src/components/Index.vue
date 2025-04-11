@@ -1,7 +1,8 @@
-<template>
+<template >
   <div>
     <div style="padding: 10px">
-      <Button :disabled="editDisabled" @click="openConfigModal" style="width: 120px">编辑</Button>
+      <Button type="primary" @click="openCreateModal" style="width: 120px">新建</Button>
+      <Button :disabled="editDisabled" @click="openConfigModal" style="width: 120px">容器配置信息</Button>
       <Dropdown trigger="click" @on-click="controlContainer">
         <Button type="primary" :disabled="selectDisabled" style="width: 120px">
           操作
@@ -12,10 +13,76 @@
         </DropdownMenu>
       </Dropdown>
       <Button type="text" @click="logout" style="float: right;">注销</Button>
+      <Button @click="openLogsModal">查看操作日志</Button>
     </div>
     <Table highlight-row ref="containerTable" :columns="columns" :data="containerList" @on-current-change="selectContainer">
     </Table>
 
+    <!-- 日志弹窗 -->
+    <Modal v-model="logsModalVisible" title="操作日志" width="70%">
+        <div v-if="logList.length > 0">
+          <!-- 日志列表 -->
+          <el-table :data="logList" style="width: 100%">
+            <el-table-column label="操作人员" prop="accountName"></el-table-column>
+            <el-table-column label="操作" prop="action"></el-table-column>
+            <el-table-column label="时间" prop="logTime">
+            </el-table-column>
+          </el-table>
+          <!-- 分页组件 -->
+          <el-pagination
+            :current-page="currentPage"
+            :page-size="10"
+            :total="totalLogs"
+            layout="prev, pager, next, jumper"
+            @current-change="handlePageChange"
+            style="width: 100%; margin-top: 10px"
+          ></el-pagination>
+        </div>
+        <div v-else>
+          <p>没有日志数据。</p>
+        </div>
+    </Modal>
+    <!-- 新建容器 Modal -->
+    <Modal id="createModal" title="新建容器" v-model="createModal" :mask-closable="false" width="50%">
+      <div>
+        <div style="margin-bottom: 10px;">
+          <span>容器名称：</span>
+          <Input v-model="newContainer.name" placeholder="请输入容器名称" />
+        </div>
+        <div style="margin-bottom: 10px;">
+          <span>访问端口：</span>
+          <Input v-model="newContainer.port" placeholder="请输入远程访问端口" />
+        </div>
+        <div style="margin-bottom: 10px;">
+          <span>操作系统：</span>
+          <Select v-model="newContainer.os" placeholder="请选择操作系统" style="width: 100%;">
+            <Option value="KylinOS">KylinOS（银河麒麟）</Option>
+            <Option value="Ubuntu">Ubuntu</Option>
+          </Select>
+        </div>
+        <div v-if="errorMessage" style="color: red; margin-bottom: 10px;">{{ errorMessage }}</div>
+      </div>
+      <div slot="footer">
+        <Button type="text" @click="closeCreateModal">取消</Button>
+        <Button type="primary" @click="createContainer" :loading="createModalLoading">确认</Button>
+      </div>
+    </Modal>
+    <!-- 资源利用窗口 -->
+    <Modal v-model="isResourceModalVisible" title="资源利用可视化" :mask-closable="false" width="50%">
+      <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+        <!-- CPU 使用率图表 -->
+        <div style="flex-grow: 1; margin-bottom: 20px;">
+          <h4>容器 CPU 使用率</h4>
+          <ChartComponent :data="cpuData" title="CPU Usage" />
+        </div>
+
+        <!-- 内存使用率图表 -->
+        <div style="flex-grow: 1;">
+          <h4>容器内存使用率</h4>
+          <ChartComponent :data="memoryData" title="Memory Usage" />
+        </div>
+      </div>
+    </Modal>
     <Modal id="configModal" title="修改配置" v-model="configModal" :mask-closable="false" width="50%">
       <Tabs :value="defaultTab" v-if="container">
         <TabPane label="卷" name="mount">
@@ -80,13 +147,34 @@
   </div>
 </template>
 
+
 <script>
-  import router from "../router";
+  import ChartComponent from "./ChartComponent.vue";  // 引入 ChartComponent 组件
 
   export default {
     name: "Index",
+    components: {ChartComponent},
     data() {
       return {
+        logList: [
+          { label: '账户', prop: 'accountName' },
+          { label: '操作', prop: 'action' },
+          { label: '时间', prop: 'logTime' }
+        ], // 存储日志数据
+        totalLogs: 0, // 总日志数
+        logsModalVisible: false, // 控制日志弹窗显示
+        currentPage: 1, // 当前页，添加这个属性
+        isResourceModalVisible: false, // 控制 Modal 显示与隐藏
+        cpuData: {},  // 存储 CPU 使用率数据
+        memoryData: {}, // 存储内存使用率数据
+        createModal: false,
+        createModalLoading: false,
+        newContainer: {
+          name: '',
+          port: '',
+          os: ''
+        },
+        errorMessage: '',
         defaultTab: "mount",
         configModal: false,
         configModalLoading: false,
@@ -162,11 +250,247 @@
                 })
               ])
             }
+          },
+          {
+            title: "远程连接",
+            key: "remote-connect",
+            render: (h, params) => {
+              const row = params.row;
+              const state = row.state;
+
+              return h("div", [
+                h("Button", {
+                  props: {
+                    type: "primary",
+                    disabled: state !== "运行中"
+                  },
+                  on: {
+                    click: async () => {
+                      const vncPort = await this.getVncPort(row); // 动态获取 VNC 映射端口
+                      if (vncPort) {
+                        const vncUrl = `http://localhost:${vncPort}/vnc.html`;
+                        window.open(vncUrl, "_blank"); // 打开 noVNC 客户端页面
+                      }
+                    }
+                  }
+                }, "确定")
+              ]);
+            }
+          },
+          {
+            title: "资源利用",
+            key: "resource",
+            render: (h, params) => {
+              const row = params.row;
+
+              return h("div", [
+                h("Button", {
+                  props: {
+                    type: "default"
+                  },
+                  on: {
+                    click: async () => {
+                      // 通过 row 获取容器 ID，调用 fetchUsageData
+                      await this.fetchUsageData(row);
+                      this.openResourceModal();
+                    }
+                  }
+                }, "...")
+              ]);
+            }
           }
         ]
       }
     },
     methods: {
+
+      // 打开日志弹窗
+      openLogsModal() {
+        this.logsModalVisible = true;
+        this.fetchLogs(0, 10); // 获取日志数据，默认从第0条开始，每页10条
+      },
+
+// 获取日志数据
+      fetchLogs(offset, limit) {
+        this.$requests
+          .get("/log/getLogs", { offset, limit })  // 传递分页参数 offset 和 limit
+          .then((res) => {
+            if (res.data.code === 0) {  // 假设返回的code为0表示成功
+              const data = res.data.data;
+              if (data && Array.isArray(data.items)) {
+                this.logList = data.items;  // 获取日志列表
+                this.totalLogs = data.total; // 获取日志总数
+              } else {
+                console.error('日志数据格式错误或没有返回日志项');
+                this.logList = [];
+                this.totalLogs = 0;
+              }
+            } else {
+              this.$Message.error("获取操作日志失败");
+              this.logList = [];  // 出现错误时清空日志列表
+              this.totalLogs = 0;
+            }
+          })
+          .catch((error) => {
+            console.error("获取操作日志失败:", error);
+            this.$Message.error("请求失败，请检查网络");
+            this.logList = [];
+            this.totalLogs = 0;
+          });
+      },
+
+// 分页处理
+      handlePageChange(page) {
+        this.currentPage = page;
+        const offset = (page - 1) * 10;  // 每页10条
+        this.fetchLogs(offset, 10); // 根据页码和每页条数重新获取数据
+      },
+      // 打开 Modal
+      openResourceModal() {
+        this.isResourceModalVisible = true; // 打开弹窗
+        this.$nextTick(() => {
+          // 确保容器已经渲染完成后调整图表尺寸
+          if (this.chartInstance) {
+            this.chartInstance.resize();
+          }
+        });
+      },
+      // 获取 CPU 使用率数据
+      fetchCpuUsage(containerName) {
+        this.$requests
+          .get("/container/getCpuUsage", {containerName:containerName })
+          .then((res) => {
+            if (res.data.code === 0) {
+              this.cpuData = res.data.data; // 更新 CPU 数据
+            } else {
+              this.$Message.error("获取 CPU 使用率失败");
+            }
+          })
+          .catch((error) => {
+            this.$Message.error("请求失败，请检查网络");
+          });
+      },
+
+// 获取内存使用率数据
+      fetchMemoryUsage(containerName) {
+        this.$requests
+          .get("/container/getMemoryUsage", {containerName:containerName })
+          .then(res => {
+            if (res.data.code === 0) {
+              this.memoryData = res.data.data;
+            } else {
+              this.$Message.error("获取内存使用率失败");
+            }
+          })
+          .catch(err => {
+            this.$Message.error("请求失败，请检查网络");
+          });
+      },
+// 主方法，调用两个独立的方法
+      fetchUsageData(row) {
+        if (!row.name) {
+          this.$Message.error("容器名称不存在");
+          return;
+        }
+
+        this.fetchCpuUsage(row.name);
+        this.fetchMemoryUsage(row.name);
+      },
+      openCreateModal() {
+        this.createModal = true;
+        this.newContainer = { name: '', port: '', os: '' }; // 清空表单
+        this.errorMessage = ''; // 清空错误信息
+      },
+      closeCreateModal() {
+        this.createModal = false;
+      },
+      createContainer() {
+        // 验证容器名称是否为空
+        if (!this.newContainer.name) {
+          this.errorMessage = '请填写容器名称！';
+          return;
+        }
+
+        // 验证容器名称是否已经存在
+        const isNameTaken = this.containerList.some(container => container.name === this.newContainer.name);
+        if (isNameTaken) {
+          this.errorMessage = '容器名称已存在，请选择其他名称！';
+          return;
+        }
+
+        // 验证端口是否为空
+        if (!this.newContainer.port) {
+          this.errorMessage = '请填写端口！';
+          return;
+        }
+
+        // 验证操作系统类型是否选择
+        if (!this.newContainer.os) {
+          this.errorMessage = '请选择操作系统！';
+          return;
+        }
+
+        // 验证容器名称是否符合规范（长度和字符要求）
+        if (!/^[a-z0-9-]+$/.test(this.newContainer.name)) {
+          this.errorMessage = '容器名称只能包含小写字母、数字和连字符！';
+          return;
+        }
+
+        // 验证端口是否为数字
+        if (isNaN(this.newContainer.port)) {
+          this.errorMessage = '端口必须是数字！';
+          return;
+        }
+
+        // 验证端口范围（例如，1-65535）
+        if (this.newContainer.port < 1 || this.newContainer.port > 65535) {
+          this.errorMessage = '端口号必须在 1 到 65535 之间！';
+          return;
+        }
+
+        this.createModalLoading = true;
+
+        // 调用后端接口
+        this.$requests.post("/container/createContainer", {
+          name: this.newContainer.name,
+          hostport: this.newContainer.port,
+          type: this.newContainer.os
+        }).then(res => {
+          if (res.data.code === 0) {
+            this.$Message.success('容器创建成功！');
+            this.createModal = false;
+
+            // 触发父组件更新容器列表的事件
+            this.$emit('container-created', this.newContainer);
+          } else {
+            this.errorMessage = res.data.message || '容器创建失败，请重试！';
+          }
+        }).catch(error => {
+          this.errorMessage = '接口调用失败，请检查网络或联系管理员！';
+          console.error('创建容器失败：', error);
+        }).finally(() => {
+          this.createModalLoading = false;
+        });
+      },
+      // 用于获取容器对应的 VNC 端口
+      getVncPort(row) {
+        // 通过容器 ID 来获取 VNC 端口
+        // 可以替换为实际的接口调用逻辑
+        return this.$requests
+          .get("/container/getVncPort", { id: row.id })
+          .then(res => {
+            if (res.data.code === 0) {
+              return res.data.data; // 接口返回的是包含端口号的对象
+            } else {
+              this.$Message.error("获取 VNC 端口失败");
+              return null;
+            }
+          })
+          .catch(() => {
+            this.$Message.error("请求失败，请检查网络");
+            return null;
+          });
+      },
       getContainerStatusList() {
         this.$requests.get("/container/getContainerStatusList", {}).then(res => {
           if (res.data.code === 0) {
@@ -399,7 +723,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" >
   #configModal {
 
     .ivu-modal-body {
@@ -463,4 +787,83 @@
       }
     }
   }
+
+  /* 控制Modal弹窗的最大高度 */
+  .el-dialog {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  /* 调整表格样式 */
+  .log-table {
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  /* 表格列的样式 */
+  .log-column {
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* 改变表格头部的背景色 */
+  .el-table__header {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+  }
+
+  /* 改变表格行的交替背景色 */
+  .el-table__row:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  /* 改变分页组件的样式 */
+  .log-pagination {
+    margin-top: 20px;
+    text-align: right;
+    padding: 10px;
+  }
+
+  /* 控制Modal内容的内边距 */
+  .el-dialog__body {
+    padding: 20px;
+  }
+
+  /* 控制分页组件的高度 */
+  .el-pagination {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 10px 0;
+    background-color: #f9f9f9;
+  }
+
+  /* 为表格列添加鼠标悬浮效果 */
+  .el-table th,
+  .el-table td {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .el-table th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+
+  .el-table td {
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* 为表格添加阴影效果 */
+  .el-table {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
 </style>

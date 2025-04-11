@@ -6,10 +6,12 @@ import router from './router'
 import requests from './libs/axios';
 import ViewUI from 'view-design';
 import 'view-design/dist/styles/iview.css';
+import ElementUI from "element-ui";
 
 Vue.use(ViewUI);
 Vue.config.productionTip = false
 Vue.prototype.$requests = requests;
+Vue.use(ElementUI);
 
 /* eslint-disable no-new */
 new Vue({
